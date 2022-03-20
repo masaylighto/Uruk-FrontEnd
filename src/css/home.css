@@ -11,6 +11,11 @@
 
   
 }
+.player-icon{
+    background-image: url(../icons/player.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
 .about-us-contaner{
     width: 36%;
     margin-left: 92px;

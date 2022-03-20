@@ -20,7 +20,7 @@ class CHome extends React.Component {
                         To indicate how the word "uruk" should be pronounced, we included an audio file
                     </p>
                    
-                   <button onClick={(e)=>{e.target.children[0].play()}}> play <audio id="player"    src={uruk_voice}>                        
+                   <button className="player-icon w-10 h-10 mx-auto" onClick={(e)=>{e.target.children[0].play()}}>  <audio id="player"    src={uruk_voice}>                        
                         If you are reading this, it is because your browser does not support the audio element.
                         </audio> </button>
                 </div>
