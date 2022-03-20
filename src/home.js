@@ -8,7 +8,7 @@ const uruk_voice = require("./etc/uruk-sound.ogg");
 class CHome extends React.Component {
 
     Logo() {
-        return <div className="Logo mt-10 bg-no-repeat bg-contain" />
+        return <div className="Logo mt-10 bg-no-repeat bg-contain"  />
     }
   
     AboutUs() {
