@@ -1,8 +1,15 @@
+@media (max-width: 1024px){
 .nav-btn-color
 {
-    background:#f9f9f925;
+    background:#d1d1d15f !important;
+}
+
+}
+.nav-btn-color
+{
+    background:#f9f9f925 ;
 }
 .nav-btn-color:hover
 {
-    background:#38c894;
+    background:#38c894!important;
 }

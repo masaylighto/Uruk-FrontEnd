@@ -14,7 +14,7 @@ class Cbackground extends React.Component
     bg()
     {
 
-        return <div className="fixed  uruk-bg-color left-0 right-0 top-0 flex justify-center items-center bottom-0">{ this.overlay_div()}{this.white_div()} </div>
+        return <div className="md:fixed  uruk-bg-color left-0 right-0 top-0 flex justify-center items-center bottom-0">{ this.overlay_div()}{this.white_div()} </div>
     }
     render(){
         return this.bg()

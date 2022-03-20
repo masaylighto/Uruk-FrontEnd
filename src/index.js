@@ -7,9 +7,10 @@ import reportWebVitals from './reportWebVitals';
 import CHome from './home';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <CNavbar/>
+  <React.StrictMode> 
+     <CNavbar/>
     <Cbackground />
+   
     <CPage Page={CHome}/>
     </React.StrictMode>,
   document.getElementById('root')

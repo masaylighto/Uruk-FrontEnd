@@ -16,10 +16,26 @@
     background-size: contain;
     background-repeat: no-repeat;
 }
+@media (max-width: 1024px){
+    .about-us-contaner{
+        width: 66% !important;
+        margin-right: auto !important;
+        margin-left: auto !important;
+    } 
+    body{
+        overflow: visible !important;
+    }
+    .Logo{
+       background-size: cover;
+       width: 200px;
+       height: 200px;
+    }
+}
+
 .about-us-contaner{
     width: 36%;
     margin-left: 92px;
-}
+} 
 .about-div-inside{
     background-color: white;
 

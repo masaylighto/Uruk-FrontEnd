@@ -30,7 +30,7 @@ class CHome extends React.Component {
         </div>
     }
     render() {
-        return <div className="flex sticky z-10 justify-between flex-row-reverse items-center w-full h-full ">
+        return <div className="flex flex-col lg:flex-row-reverse gap-3 sticky z-10 justify-between  items-center w-full md:h-full ">
             <this.Logo />
             <this.AboutUs />
         </div>
