@@ -1,0 +1,25 @@
+.Logo{
+    background-image: url(../icons/Logo.svg);
+    width: 34%;
+    height: 57%;
+}
+.about-div{
+    background: linear-gradient(
+        45deg, #3dc5e7, #37c871);
+        padding: 1px;
+    box-shadow: 12px 4px 20px 8px #cbcbcb24;
+
+  
+}
+.about-us-contaner{
+    width: 36%;
+    margin-left: 92px;
+}
+.about-div-inside{
+    background-color: white;
+
+
+}
+.read-more-btn{
+    background: linear-gradient(94deg, #3dc5e7, #37c87194)
+}
