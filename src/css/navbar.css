@@ -9,7 +9,7 @@
 }
 .nav-btn-color
 {
-    background: #ffffff78;
+    background: #ffffff30;
     
 }
 .nav-btn-color:hover
@@ -17,7 +17,7 @@
     background:#38c894!important;
 }
 .nav-btn-txt{
-    color: #0c0c0c7a;
+    color: white;
 }
 .nav-btn-raduis:last-child{
 border-top-left-radius: 0.25rem;

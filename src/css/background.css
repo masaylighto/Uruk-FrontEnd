@@ -1,6 +1,5 @@
 .uruk-bg-color{
-    background: linear-gradient(
-        31deg, #3dc5e7, #37c87194);
+    background:#3dc5e7;
 }
 .bg-svg{
     background: url(../icons/bg.svg);
