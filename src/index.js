@@ -1,11 +1,8 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import CNavbar from './navbar';
 import Cbackground from './background';
-
 import reportWebVitals from './reportWebVitals';
-import CHome from './home';
-import CProjects from './Projects'
 import CRouter from './router'
 
 ReactDOM.render(

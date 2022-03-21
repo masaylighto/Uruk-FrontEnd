@@ -10,3 +10,18 @@ font-size: 0.7em;
     margin: 10px;
     background:#38c894!important;
 }
+.page-hight{
+    height:90vmin
+}
+.table-text-size
+{
+    font-size: 0.8em;
+}
+.Logo{
+    background-image: url(../icons/Logo.svg);
+    width: 34%;
+    height: 57%;
+}
+.barely-Bg-transparent{
+    background-color: rgba(255, 255, 255, 0.607);
+}
