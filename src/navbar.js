@@ -18,7 +18,7 @@ class CNavbar extends React.Component
             {this.button("Contribute","Contribute")}
             {this.button("Docs","Docs")}
             {this.button("Projects","Projects")}
-            {this.button("Home","")}
+            {this.button("Home","/")}
         </div>
     }
 }
