@@ -6,6 +6,7 @@ import Ccontacts from "./Contacts";
 import { Route,BrowserRouter,Routes } from "react-router-dom";
 import Cblog from "./Blog";
 
+
 class CRouter extends React.Component
 {   
    
@@ -18,7 +19,7 @@ class CRouter extends React.Component
          <Route path="/Contacts" element={<Ccontacts />} />  
          <Route path="/Blog" element={<Cblog />} />  
          <Route path="/Contribute" element={<Ccontribute />} />  
-         <Route path="/Projects" element={<CProjects />} />     
+         <Route path="/Projects" element={<CProjects />} />       
        </Routes>
      </BrowserRouter>
     }

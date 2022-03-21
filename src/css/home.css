@@ -44,3 +44,18 @@
 .read-more-btn{
     background: linear-gradient(94deg, #3dc5e7, #37c87194)
 }
+.Logo_text{
+    background: linear-gradient(94deg, #3dc5e7, #37c87194);
+    font-size: 4em;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+*{
+
+    -webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+-o-user-select: none;
+user-select: none;
+}

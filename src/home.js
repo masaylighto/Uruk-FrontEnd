@@ -6,18 +6,21 @@ const uruk_voice = require("./etc/uruk-sound.ogg");
 
 
 class CHome extends React.Component {
-
+   
     Logo() {
         return <div className="Logo mt-10 bg-no-repeat bg-contain"  />
     }
   
     AboutUs() {
         return <div className="flex about-us-contaner flex-col items-center justify-center ">
+            <p className=" Logo_text -mt-10 mb-1">Uruk</p>
             <div className=" about-div rounded-xl ">
                 <div className="flex flex-col p-5 rounded-xl  about-div-inside">
-                    <p>The Uruk project is a highly motivated community of people sharing a strong interest in free culture and free society. We all help each other and share the common purpose of supporting and building free projects. The Uruk project provides a list of goals our members follow in order to promote and strengthen free (as in freedom!) software and culture.
+                    <p>
+                        The Uruk project is a highly motivated community of people sharing a strong interest in free culture and free society. We all help each other and share the common purpose of supporting and building free projects. The Uruk project provides a list of goals our members follow in order to promote and strengthen free (as in freedom!) software and culture.
                         The Uruk name was chosen in honor of Uruk (Warka) city in Iraq
                         To indicate how the word "uruk" should be pronounced, we included an audio file
+                        The logo is a symbol of the Sumerian Palm with nine fronds, surrounded by Tigris and Euphrates rivers.
                     </p>
                    
                    <button className="player-icon w-10 h-10 mx-auto" onClick={(e)=>{e.target.children[0].play()}}>  <audio id="player"    src={uruk_voice}>                        
@@ -25,7 +28,7 @@ class CHome extends React.Component {
                         </audio> </button>
                 </div>
             </div>
-            <button className="w-44 rounded mt-2 h-14 text-white read-more-btn"> Read More</button>
+            <button onClick={(()=>{window.location.href='https://en.wikipedia.org/wiki/Uruk'}).bind()} className="w-44 rounded mt-2 h-14 text-white read-more-btn"> Read More</button>
         
         </div>
     }
