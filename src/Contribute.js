@@ -95,7 +95,7 @@ class Ccontribute extends React.Component {
                 
                 <p className="shadow barely-Bg-transparent z-20 sticky  rounded-t-2xl p-3 w-fit">How To Contribute</p>
                 <p className="shadow barely-Bg-transparent z-20 sticky  rounded-b-2xl  p-3 w-fit">If you want to contribute, read this first:</p>
-                <div className="flex z-20 sticky  flex-row  mt-2">
+                <div className="grid-guide-line z-20 sticky    mt-2">
                     <this.Contribute_Guide_Line />
                 </div>
                 <this.LicensePart/>

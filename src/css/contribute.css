@@ -51,3 +51,8 @@ animation: margin-up-down 0.35s linear 0s 1 normal forwards;
     margin-right: auto;
     padding-right:10px ;
 }
+.grid-guide-line{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,323px);
+        gap: 8px;
+}
