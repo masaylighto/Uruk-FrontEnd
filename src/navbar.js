@@ -12,7 +12,7 @@ class CNavbar extends React.Component
             return <button onClick={(()=>{this.redirect(Link)}).bind()} className="nav-btn-color nav-btn-raduis nav-btn-txt  font-medium w-24  h-8 p-1 text-center" >{Name}</button>
     }
     render(){
-        return <div className="flex   flex-col-reverse sticky px-2 z-10 md:flex-row-reverse items-center w-full md:h-12 ">
+        return <div className="flex   flex-col-reverse  px-2 z-10 md:flex-row-reverse items-center w-full md:h-12 ">
             {this.button("Blog","Blog")}
             {this.button("Contacts","Contacts")}
             {this.button("Contribute","Contribute")}

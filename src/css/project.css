@@ -1,0 +1,45 @@
+.full-screan-Height{
+    height: 91.9vmin;
+}
+.grid-auto-column{
+    grid-template-columns: repeat(auto-fit, 231px);
+}
+.border-color{
+    border-color: #3dc5e761
+}
+.move:hover{
+    transform: translateY(-10px);
+}
+.btn-color:hover{
+    background-color: #3dc5e7b8
+}
+.btn-color{
+    background-color: rgba(255, 255, 255, 0.247)
+}
+.card-wave{
+   
+    
+    background-image: url('../icons/card-wave2.svg'),url('../icons/card-wave.svg'),url('../icons/card-wave-reversed.svg'),url('../icons/card-wave-reversed2.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+.logo::after{
+content: "";
+opacity: 0.1    ;
+position: absolute;
+left: 0;
+right: 0;
+bottom: 0;
+top: 0;
+background-image: url(../icons/Logo.svg);
+   background-repeat: no-repeat;
+   background-size: 40vmax;
+   background-position: center;
+}
+.Special-text-color{
+    background: linear-gradient(94deg, #51cfee88 , #3dc5e7);
+    
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

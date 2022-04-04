@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import CNavbar from './navbar';
-import Cbackground from './background';
+
 import reportWebVitals from './reportWebVitals';
 import CRouter from './router'
 
 ReactDOM.render(
   <React.StrictMode> 
     <CNavbar/>
-    <Cbackground />   
+    
     <CRouter></CRouter>
     </React.StrictMode>,
   document.getElementById('root')
