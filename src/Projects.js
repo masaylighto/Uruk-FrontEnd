@@ -64,11 +64,7 @@ var Projects = [
 		disc: "Uruk Control Center, Simple System Control Center for GNU/Linux System ( Only for XFCE4 and MATE DE for now ).",
 		link: "https://notabug.org/alimiracle/uruk-cleaner",
 	},
-	{
-		name: "Delta",
-		disc: "	File Sharing system via network.",
-		link: "https://notabug.org/alimiracle/uruk-cleaner",
-	},
+
 ];
 class CProjectCard extends React.Component {
 	AnimateToTop(Event) {
@@ -142,26 +138,26 @@ class CProjectsGrid extends React.Component {
 		});
 	}
 
-    
+ 
       
     componentDidMount()
     {
-       let element = this.Scroller.current;
+        let element = this.Scroller.current.parentElement;
+       
         let Index=0;
+        let PastOffset=0;
         setInterval(()=>{
-            
-           element.children[Index].style.order=Projects.length-1
-            if(Index===Projects.length-1) 
-            {                
-                Index=-1;
-                for (const son of element.children) {
-                    son.style.order="";
-                }
-               
-            }
+           
             Index++;
+            element.scrollBy({top:0,left:215,behavior:"smooth"})
           
-
+            if(Index>=Projects.length-1 || PastOffset===element.scrollLeft)
+            {
+             
+                element.scrollBy({top:0,left:element.offsetWidth*-1,behavior:"smooth"})
+                Index=0;
+            }
+            PastOffset=element.scrollLeft
         },1500)
    
     }
