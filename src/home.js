@@ -8,13 +8,13 @@ const uruk_voice = require("./etc/uruk-sound.ogg");
 class CHome extends React.Component {
    
     Logo() {
-        return <div className="Logo mt-10 bg-no-repeat bg-contain"  />
+        return <div className="Logo bg-no-repeat bg-contain"  />
     }
   
     AboutUs() {
         return <div className="flex about-us-contaner flex-col items-center justify-center ">
             <p className=" Logo_text -mt-10 mb-1">Uruk</p>
-            <div className=" about-div rounded-xl ">
+            <div className=" rounded-xl ">
                 <div className="flex flex-col p-5 rounded-xl  about-div-inside">
                     <p>
                         The Uruk project is a highly motivated community of people sharing a strong interest in free culture and free society. We all help each other and share the common purpose of supporting and building free projects. The Uruk project provides a list of goals our members follow in order to promote and strengthen free (as in freedom!) software and culture.
