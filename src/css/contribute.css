@@ -68,3 +68,6 @@ animation: margin-up-down 0.35s linear 0s 1 normal forwards;
 .MaxWidth14rem{
     max-width: 14rem;
 }
+.grid-auto-column{
+    grid-template-columns: repeat(auto-fit, 200px);
+}

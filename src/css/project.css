@@ -1,9 +1,7 @@
 .full-screan-Height{
     height: 91.9vmin;
 }
-.grid-auto-column{
-    grid-template-columns: repeat(auto-fit, 231px);
-}
+
 .border-color{
     border-color: #3dc5e761
 }

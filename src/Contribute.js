@@ -13,34 +13,32 @@ var List = [
 ];
 var Rows = [
   {
-    Name: "Uruk GNU/Linux",
-    Link: "#",
-    Disc: "Uruk GNU/Linux is a fully free operating system for home users, small enterprises and educational centers based on Trisquel.",
+    Name:"Ali Abdul Ghani",
+    Email:"alimiracle@riseup.net"
   },
   {
-    Name: "Uruk Cleaner",
-    Link: "#",
-    Disc: "Uruk Cleaner is a program that you can use to clean your system from cache files and logs.",
+    Name:"Hayder Majid",
+    Email:"hayder@riseup.net"
   },
   {
-    Name: "UPMS",
-    Link: "#",
-    Disc: "UPMS(Uruk Package Managers Simulator). This program can simulate several common package managers commands, which means you can install, uninstall, update and remove the packages using any package manager you prefer to get the work done with.",
+    Name:"Azzen Abidi	",
+    Email:"azzen.abidi@gmail.com"
   },
   {
-    Name: "Uruk Ocr Server",
-    Link: "#",
-    Disc: "A Simple, small, powerful OCR web server used to convert images to text.",
+    Name:"Norah",
+    Email:"norah@riseup.net"
   },
   {
-    Name: "Irc log recorder",
-    Link: "#",
-    Disc: "The Irc log recorder is an irc bot that logs the entire communication of an irc channel. It is equipped with a web server to enable users to access the logs from a web browser and/or telnet ",
+    Name:"Zakaria Mekki Belbali	",
+    Email:"zakibelbali12@gmail.com"
   },
   {
-    Name: "Masalla Icon Theme",
-    Link: "#",
-    Disc: "Icon theme for *NIX OS inspired by the modern flat design trend. .",
+    Name:"kzimmermann",
+    Email:"kzimmermann@vivaldi.net"
+  },
+  {
+    Name:"Ahmad Nourallah	",
+    Email:"ahmadnurallah@gmail.com"
   },
 ];
 
@@ -116,46 +114,40 @@ class Ccontribute extends React.Component {
     });
   }
   //create List of Projects row
-  Projects_Row() {
-      let index=0;
+  ContributorCard() {
+     
     return Rows.map((Row) => {
-        index++;
-      return this.Row(Row.Link, Row.Name, Row.Disc,(index%2==0));
+       
+      return this.Card(Row.Name, Row.Email);
     });
   }
+  CopyToClipboard(Text,Element){
+    window.navigator.clipboard.writeText(Text)   
+    Element.target.parentElement.children[0].animate([{bottom:"100%",opacity:"0"},{bottom:"0%",opacity:"1"},{bottom:"0%",opacity:"1"},{bottom:"100%",opacity:"0"}],{fill:"forwards",duration:2000})
+  }
   //represent the element that represent the project row in the project table
-  Row(Link, Name, Disc,Colored) {
+  Card(Name, Email) {
     return (
-      <div className={"flex flex-row    margin-updown-hover table-text-size  "+ ((Colored)?"GradientHeader":"")}>
+      <div onClick={(Element)=>this.CopyToClipboard(Email,Element)} className={"flex relative text-center  rounded-2xl flex-col border  text-sm  "}>
+        <div className="absolute  opacity-0 top-0 bottom-full left-0 right-0 bg-white  flex justify-center  items-center text-2xl ">
+             <p className="Special-text-color ">Copied</p>      
+        </div>
         <div
-          className={"border-t border-b  w-40    p-4 items-center flex "}>
-          <a href={Link}>{Name}</a>
+          className={"p-4 w-full break-words "}>
+         {Name}
         </div>
-        <div className={"border-t border-b    p-4 w-full items-center flex "}>
-          {Disc}
-        </div>
-      </div>
-    );
-  }
-  //create a header for the table
-  Projects_Table_Header() {
-    return (
-      <div className="flex   GradientLine table-text-size flex-row">
-        <div className={" w-40   justify-center  p-4 items-center flex "}>
-          <p>Name</p>
-        </div>
-        <div className={"border-t border-b  pr-24 justify-center    w-full items-center flex "}>
-          <p>Description</p>
+        <div className={"p-4 w-full break-words "}>
+          {Email}
         </div>
       </div>
     );
   }
+
   //create table that represent the ui
-  Projects_Table() {
+  ContributorsGrid() {
     return (
-      <div className="flex w-full gap-1  px-9 mt-10   flex-col  ">
-        {this.Projects_Table_Header()}
-        {this.Projects_Row()}
+      <div className="grid grid-auto-column w-full gap-1  mt-10   flex-col  ">
+        {this.ContributorCard()}
       </div>
     );
   }
@@ -179,8 +171,8 @@ class Ccontribute extends React.Component {
         </div>
         <CTerms />
         <div className="flex   flex-col">
-          <p className=" text-center   Special-text-color text-2xl my-10">Projects</p>
-          {this.Projects_Table()}
+          <p className=" text-center   Special-text-color text-2xl my-10">Project Members </p>
+          {this.ContributorsGrid()}
         </div>
       </div>
     );
