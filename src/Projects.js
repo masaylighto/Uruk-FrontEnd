@@ -3,7 +3,7 @@ import { list } from "postcss";
 import React,{useState} from "react";
 import './css/project.css'
 import './css/tailwind.css'
-
+import './css/shared.css'
 
 
 var Projects=[
@@ -103,8 +103,8 @@ class CProjectCard extends React.Component {
     
     
     render(){
-       return <div className="flex mx-1 relative move text-sm rounded-lg card-wave  overflow-hidden border border-color shadow-lg  flex-col h-64">
-           <div className={"block overflow-hidden h-5/6"}>
+       return <div className="flex w-52 mx-1 relative move text-sm rounded-lg card-wave   border border-color   flex-col h-64">
+           <div className={"block overflow-y-hidden h-5/6"}>
        <div  onMouseLeave={this.OnMouseOutNameElement}  onMouseEnter={this.AnimateToTop} className={"w-full overflow-hidden text-3xl flex h-full justify-center items-center text-center p-4 "}>{this.props.name}</div>
         <div onMouseLeave={this.OnMouseOutDiscElement} className={"w-full h-full overflow-scroll scrollbar-thin "}>{this.props.disc}</div>
         </div>
@@ -123,11 +123,12 @@ class CProjects extends React.Component {
         })
     }
     render() {
-        return <div className="flex  items-center full-screan-Height  m-auto flex-col    overflow-scroll scrollbar-none">
-              <p className="text-center text-3xl  Special-text-color my-10">Uruk Projects</p>
-                <div className="grid justify-between gap-y-5 g w-5/6 grid-auto-column">
+        return <div className="flex items-center  m-auto flex-col  w-full    ">
+              <p className="text-center text-3xl   Special-text-color my-10">Uruk Projects</p>
+              <div className="flex items-center  overflow-x-scroll scrollbar-none  w-full    ">
+                <div className="flex justify  between gap-3      flex-row">
                 {this.CreateRows()}
-                
+                </div>
                 </div>
         </div>
     }

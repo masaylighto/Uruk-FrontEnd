@@ -6,3 +6,13 @@
   .noto-font{
       font-family: noto;
   }
+  .H100Vmin{
+
+    height: 100vmin;
+}
+.Special-text-color{
+    background: linear-gradient(270deg, #37c871b8 , #3dc5e7);
+    
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

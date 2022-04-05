@@ -1,5 +1,5 @@
 .guide-line-text-size{
-font-size: 0.7em;
+font-size: 1em;
 }
 
 .guide-line-color:hover
@@ -55,4 +55,10 @@ animation: margin-up-down 0.35s linear 0s 1 normal forwards;
     display: grid;
     grid-template-columns: repeat(auto-fit,323px);
         gap: 8px;
+}
+.MaxHeightZero{
+    max-height: 0px;
+}
+.MaxWidth14rem{
+    max-width: 14rem;
 }

@@ -37,9 +37,3 @@ background-image: url(../icons/Logo.svg);
    background-size: 40vmax;
    background-position: center;
 }
-.Special-text-color{
-    background: linear-gradient(94deg, #51cfee88 , #3dc5e7);
-    
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}

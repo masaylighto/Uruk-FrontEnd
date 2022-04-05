@@ -1,17 +1,12 @@
 .uruk-bg-color{
     background:#3dc5e7;
 }
-.bg-svg{
-    background: url(bg.svg);
+
+.TopBar{
+    background: url(TopBar.svg);
     background-size: cover !important;
-}
-.bg-black-svg{
-    background: url(bgblack.svg);
-    background-size: cover !important;
-}
-.overlay{
-    box-shadow: inset 0 0 8px rgb(255 255 255 / 41%);
-  
-    background-color: #ffffff66;
-   
+    position: absolute;
+    z-index: 1;    
+    width: 100vmax;
+    height: 200px;
 }

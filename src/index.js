@@ -4,12 +4,17 @@ import CNavbar from './navbar';
 
 import reportWebVitals from './reportWebVitals';
 import CRouter from './router'
-
+import CHome from './home'
+import CProjects from './Projects';
+import Ccontribute from './Contribute';
+import Ccontacts from './Contacts';
 ReactDOM.render(
   <React.StrictMode> 
     <CNavbar/>
-    
-    <CRouter></CRouter>
+    <CHome></CHome>    
+    <CProjects></CProjects>
+    <Ccontribute></Ccontribute>
+    <Ccontacts></Ccontacts>
     </React.StrictMode>,
   document.getElementById('root')
 );

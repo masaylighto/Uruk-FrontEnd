@@ -1,7 +1,7 @@
 import React from "react";
 import './css/home.css'
 import './css/tailwind.css'
-
+import './css/shared.css'
 const uruk_voice = require("./etc/uruk-sound.ogg");
 
 
@@ -33,7 +33,7 @@ class CHome extends React.Component {
         </div>
     }
     render() {
-        return <div className="flex flex-col lg:flex-row-reverse gap-3 sticky z-10 justify-between  items-center w-full md:h-full ">
+        return <div  className="flex H100Vmin flex-col lg:flex-row-reverse gap-3 sticky z-10 justify-between  items-center w-full md:h-full ">
             <this.Logo />
             <this.AboutUs />
         </div>
