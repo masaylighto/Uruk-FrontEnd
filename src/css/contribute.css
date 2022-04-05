@@ -15,10 +15,16 @@ font-size: 1em;
 .margin-updown-hover:hover
 {
 
-background:  linear-gradient(270deg,#38c89300,#6bd5f0);
+
 animation: margin-up-down 0.35s linear 0s 1 normal forwards;
 
 
+}
+.GradientLine{
+    background:  linear-gradient(270deg,#6bd5f0af,#6bd5f0c9);
+}
+.GradientHeader{
+    background:  linear-gradient(270deg,#38c89300,#6bd5f061); 
 }
 @keyframes margin-up-down {
     from {

@@ -1,6 +1,5 @@
 
-import { list } from "postcss";
-import React,{useState} from "react";
+import React from "react";
 import './css/project.css'
 import './css/tailwind.css'
 import './css/shared.css'
@@ -75,10 +74,7 @@ var Projects=[
         
 ]
 class CProjectCard extends React.Component {
-    constructor(props)
-    {
-       super(props)
-    }
+ 
     AnimateToTop(Event)
     {
         Event.target.animate([ { height: '100%',opacity:"1",},
@@ -117,14 +113,14 @@ class CProjects extends React.Component {
     CreateRows(){
         
        return Projects.map((row)=>{
-           //this will be used to change the   postion type of the project name
+           //this will be used to change the   position type of the project name
   
             return <CProjectCard disc={row.disc} name={row.name} link={row.link} ></CProjectCard>
         })
     }
     render() {
         return <div className="flex items-center  m-auto flex-col  w-full    ">
-              <p className="text-center text-3xl   Special-text-color my-10">Uruk Projects</p>
+              <p className="text-center   Special-text-color text-2xl my-10">Uruk Projects</p>
               <div className="flex items-center  overflow-x-scroll scrollbar-none  w-full    ">
                 <div className="flex justify  between gap-3      flex-row">
                 {this.CreateRows()}

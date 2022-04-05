@@ -45,9 +45,7 @@ var Rows = [
 ];
 
 class CTerms extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+
   ShowTerms(Element) {
     Element.target.animate([{ maxWidth: "14rem" }, { maxWidth: "60%" }], {
       duration: 100,
@@ -75,7 +73,7 @@ class CTerms extends React.Component {
       <div
         onMouseEnter={this.ShowTerms}
         onMouseLeave={this.HideTerms}
-        className="guide-line-text-size MaxWidth14rem  flex flex-col w-fit ml-3  mt-6 shadow rounded-2xl  p-4   ">
+        className="guide-line-text-size MaxWidth14rem  flex flex-col w-fit ml-14  mt-6 shadow rounded-2xl  p-4   ">
         <div>Terms</div>
         <p className={"MaxHeightZero overflow-hidden"}>
           If you have read and agreed on the above points , and would like to
@@ -107,7 +105,9 @@ class CTerms extends React.Component {
 class Ccontribute extends React.Component {
   // this map will create the list of Guide line element in the ui
   Contribute_Guide_Line() {
+     
     return List.map((Line) => {
+       
       return (
         <div className="guide-line-text-size font-normal  guide-line-size h-12  rounded-2xl font-simebold p-4 shadow-sm ">
           {Line}
@@ -117,16 +117,18 @@ class Ccontribute extends React.Component {
   }
   //create List of Projects row
   Projects_Row() {
+      let index=0;
     return Rows.map((Row) => {
-      return this.Row(Row.Link, Row.Name, Row.Disc);
+        index++;
+      return this.Row(Row.Link, Row.Name, Row.Disc,(index%2==0));
     });
   }
-  //represent the element that represnt the project row in the project table
-  Row(Link, Name, Disc) {
+  //represent the element that represent the project row in the project table
+  Row(Link, Name, Disc,Colored) {
     return (
-      <div className="flex margin-updown-hover table-text-size  flex-row">
+      <div className={"flex flex-row    margin-updown-hover table-text-size  "+ ((Colored)?"GradientHeader":"")}>
         <div
-          className={"border-t border-b border-r w-40    p-4 items-center flex "}>
+          className={"border-t border-b  w-40    p-4 items-center flex "}>
           <a href={Link}>{Name}</a>
         </div>
         <div className={"border-t border-b    p-4 w-full items-center flex "}>
@@ -138,20 +140,20 @@ class Ccontribute extends React.Component {
   //create a header for the table
   Projects_Table_Header() {
     return (
-      <div className="flex  table-text-size rounded-t-lg overflow-hidden flex-row">
-        <div className={"border-t border-b border-r w-40  table-header-color justify-center  p-4 items-center flex "}>
+      <div className="flex   GradientLine table-text-size flex-row">
+        <div className={" w-40   justify-center  p-4 items-center flex "}>
           <p>Name</p>
         </div>
-        <div className={"border-t border-b table-header-color  pr-6 justify-center   p-4 w-full items-center flex "}>
+        <div className={"border-t border-b  pr-24 justify-center    w-full items-center flex "}>
           <p>Description</p>
         </div>
       </div>
     );
   }
-  //create table that repersent the ui
+  //create table that represent the ui
   Projects_Table() {
     return (
-      <div className="flex w-5/6  rounded-lg gap-1 barely-Bg-transparent ml-9 mt-10   flex-col shadow border">
+      <div className="flex w-full gap-1  px-9 mt-10   flex-col  ">
         {this.Projects_Table_Header()}
         {this.Projects_Row()}
       </div>
@@ -166,7 +168,7 @@ class Ccontribute extends React.Component {
   render() {
     return (
       <div className="flex H100Vmin mt-10   page-hight    flex-col">
-        <p className="  Special-text-color mt-10  mx-auto text-2xl   w-fit">
+        <p className="  Special-text-color text-2xl mt-10  mx-auto    w-fit">
           How To Contribute
         </p>
         <p className=" Special-text-color  mb-10 mx-auto   w-fit">
@@ -177,7 +179,7 @@ class Ccontribute extends React.Component {
         </div>
         <CTerms />
         <div className="flex   flex-col">
-          <p className=" text-center text-2xl mt-5">Projects</p>
+          <p className=" text-center   Special-text-color text-2xl my-10">Projects</p>
           {this.Projects_Table()}
         </div>
       </div>
