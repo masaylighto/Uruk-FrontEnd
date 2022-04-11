@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import CNavbar from './navbar';
+import CNavbar from './sharedjs/navbar';
 import reportWebVitals from './reportWebVitals';
-import CHome from './home'
-import CProjects from './Projects';
-import Ccontribute from './Contribute';
-import Ccontacts from './Contacts';
+import CHome from './pages/Home'
+import CProjects from './pages/Projects';
+import Ccontribute from './pages/Contribute';
+import Ccontacts from './pages/Contacts';
+
+
 ReactDOM.render(
   <React.StrictMode> 
     <CNavbar/>
