@@ -16,3 +16,11 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+.card-wave{
+   
+    
+    background-image: url('../icons/card-wave2.svg'),url('../icons/card-wave.svg'),url('../icons/card-wave-reversed.svg'),url('../icons/card-wave-reversed2.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}

@@ -1,0 +1,3 @@
+.grid-auto-column{
+    grid-template-columns: repeat(auto-fit, 100px);
+}

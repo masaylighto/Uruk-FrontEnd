@@ -1,15 +1,15 @@
-//Connection Info
-const Server="http://127.0.0.1:8000/";
-const TranslationUrl=Server+"GetPageTranslations"
-//Global Variable That will hold the translated Value For all pages
-let HomePage=new {Title,Desc,ReadMoreBtn,};
+
+// Request Information
+let apiEndpoints="http://127.0.0.1:8111/translations/GetPageTranslations?";
+let language="En"
+
+
 
 //Get HomePage Translated Text
-(function GetHomePageTranslation(){
+async function GetHomePageTranslation(){
 
+   let Data= await fetch(apiEndpoints+`page_name=Home&language=${language}`).then(Result=>Result.json())
+   console.log(Data);
+   
+}
 
-    fetch(TranslationUrl,{method:"POST",body:"Home"}).then(Result => Result.json()).then(Result=>console.log(Result))
-
-})()
-
-export default HomePage

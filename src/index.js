@@ -1,20 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import CNavbar from './sharedjs/navbar';
 import reportWebVitals from './reportWebVitals';
-import CHome from './pages/Home'
-import CProjects from './pages/Projects';
-import Ccontribute from './pages/Contribute';
-import Ccontacts from './pages/Contacts';
-
-
+import './sharedjs/translation.js'
+import CFistPage from './pages/FirstPage';
+console.log(process.env.REACT_APP_SERVER)
 ReactDOM.render(
   <React.StrictMode> 
-    <CNavbar/>
-    <CHome></CHome>    
-    <CProjects></CProjects>
-    <Ccontribute></Ccontribute>
-    <Ccontacts></Ccontacts>
+  
+      <CFistPage></CFistPage>
+
     </React.StrictMode>,
   document.getElementById('root')
 );
