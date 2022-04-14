@@ -71,7 +71,7 @@ class Ccontacts extends React.Component
 //create table that represent the ui
 ContributorsGrid() {
     return (
-      <div className="grid grid-auto-column w-full gap-1  mt-10   flex-col  ">
+      <div className="grid justify-center grid-auto-column w-full gap-1  mt-10   flex-col  ">
         {this.ContributorCard()}
       </div>
     );

@@ -1,6 +1,6 @@
 // the variable started with _ reperesent the api end point link
 const Config ={
-    Server:"http://127.0.0.1:8111/"
+    Server:"http://127.0.0.1:8000/"
 }
 const Translation = {
     GetValue:"",
