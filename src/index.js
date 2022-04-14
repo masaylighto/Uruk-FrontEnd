@@ -1,16 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
-import './sharedjs/translation.js'
-import CFistPage from './pages/FirstPage';
+import CLanguageSelection from './pages/CLanguageSelection';
 console.log(process.env.REACT_APP_SERVER)
-ReactDOM.render(
-  <React.StrictMode> 
-  
-      <CFistPage></CFistPage>
-
-    </React.StrictMode>,
-  document.getElementById('root')
+ReactDOM.render
+(
+  <CLanguageSelection/>
+  ,document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function

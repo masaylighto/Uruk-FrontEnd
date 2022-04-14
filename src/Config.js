@@ -20,17 +20,19 @@ const WebsiteLink={
 const Projects={
 
 }
-
+/**
+     this method will receive one of const anonynmous variable that reperesent the endpoint information ( above )
+     and it will receive the paramters that gonna be sent 
+     then it Create Link be adding the Server address
+     then append the endpoint path
+     then append the paramter name which will be taken from the struct the run time reflection (for in and Object key)
+     then we will add = after every paramter name then the value then we will add &
+     so the new link will be something like http:0.0.0.0/Controller/endpoint?Pram=value&param2=value
+     Creating The New Link and We Started With The Server Address cause it the first thing links start with  
+*/
 const FormatLink = function (...Link)
 {   
-    // this method will receive one of const anonynmous variable that reperesent the endpoint information ( above )
-    // and it will receive the paramters that gonna be sent 
-    // then it Create Link be adding the Server address
-    // then append the endpoint path
-    // then append the paramter name which will be taken from the struct the run time reflection (for in and Object key)
-    // then we will add = after every paramter name then the value then we will add &
-    // so the new link will be something like http:0.0.0.0/Controller/endpoint?Pram=value&param2=value
-    //Creating The New Link and We Started With The Server Address cause it the first thing links start with  
+
     let newLink=Config.Server    
     newLink+=Link[0]._link
     if(Link.length<2){
