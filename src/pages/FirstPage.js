@@ -11,14 +11,14 @@ import './../css/firstPage.css'
 import {Translation,FormatLink} from './../Config'
 
 function RenderTheSite(Langauge)
-{
+{   
     ReactDOM.render(
         <React.StrictMode> 
-          <CNavbar/>
-          <CHome></CHome>    
-          <CProjects></CProjects>
-          <Ccontribute></Ccontribute>
-          <Ccontacts></Ccontacts>
+          <CNavbar Langauge={Langauge}/>
+          <CHome Langauge={Langauge}></CHome>    
+          <CProjects Langauge={Langauge}></CProjects>
+          <Ccontribute Langauge={Langauge}></Ccontribute>
+          <Ccontacts Langauge={Langauge}></Ccontacts>
           </React.StrictMode>,
         document.getElementById('root')
       );
@@ -46,14 +46,34 @@ class CFistPage extends React.Component {
            this.FailedToLoad()
            return
         }       
-        this.setState({Elements:this.Languages(result.Data)})     
+        //parse the lanuage into Json
+        let Languages=JSON.parse(result.Data)
+        //if the url contain a lanuage and its exist in the langauge list we got from the backend then render the page
+        if(this.LanguageIsSelected(decodeURI(window.location.pathname),Languages)){
+            return;
+        }
+        
+        this.setState({Elements:this.Languages(Languages)})     
     }
-    
+    LanguageIsSelected(Path,Langauges)
+    {
+        for (const Langauge of Langauges) {
+           
+            if(Path.includes(Langauge.language))
+            {
+                RenderTheSite(Langauge.language)
+                return true;
+            }
+
+        }
+        return false
+   
+    }
     state={
         Elements:""
     }
     Languages(Data){
-        return  JSON.parse(Data).map((Langauge)=>
+        return  Data.map((Langauge)=>
         {
           
            return this.Card(Langauge.language)
@@ -65,6 +85,7 @@ class CFistPage extends React.Component {
         return <div onClick={(()=>{this.SelectLanguage(Langauge)}).bind()} className="text-3xl noto-font   h-28  rounded-lg card-wave shadow hover:-mt-3 flex justify-center items-center"><p className="Special-text-color">{Langauge}</p></div>
     }
     SelectLanguage(Langauge){
+        window.location.href+=Langauge+"/"
         RenderTheSite(Langauge)
     }
     FailedToLoad(){
