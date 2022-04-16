@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
 import CLanguageSelection from './pages/CLanguageSelection';
-console.log(process.env.REACT_APP_SERVER)
 ReactDOM.render
 (
   <CLanguageSelection/>

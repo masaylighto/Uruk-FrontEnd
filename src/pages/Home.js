@@ -35,7 +35,7 @@ class CHome extends React.Component {
      */
     ProccessResponse(Response)
     {  
-         console.log(Response)
+        
         if(Response.State!=="Done"){
             return;
         }     
@@ -66,7 +66,7 @@ class CHome extends React.Component {
         </div>
     }
     render() {
-        return <div dir={this.props.Langauge=="العربية"?"rtl":"ltr"}  className="flex H100Vmin flex-col lg:flex-row-reverse gap-10 sticky z-10 justify-evenly  items-center w-full md:h-full ">
+        return <div id="Home" dir={this.props.Langauge==="العربية"?"rtl":"ltr"}  className="flex H100Vmin flex-col lg:flex-row-reverse gap-10 sticky z-10 justify-evenly  items-center w-full md:h-full ">
            {this.Logo()}
            {this.AboutUs()}
           

@@ -1,8 +1,6 @@
 // the variable started with _ reperesent the api end point link
 // empty variable is the paramter name which gonna be taken through reflection 
-const Config ={
-    Server:"http://127.0.0.1:8000/"
-}
+
 const Translation = {
     GetValue:"",
     GetPageTranslations:{
@@ -20,7 +18,10 @@ const Contributors = {
 
 }
 const WebsiteLink={
-
+    GetLinks:{
+        _link:"website_link/GetLinks",
+        language:""
+    }
 }
 const Projects={
 
@@ -38,7 +39,7 @@ const Projects={
 const FormatLink = function (...Link)
 {   
 
-    let newLink=Config.Server    
+    let newLink=process.env.REACT_APP_SERVER
     newLink+=Link[0]._link
     if(Link.length<2){
         return newLink
@@ -62,4 +63,4 @@ const FormatLink = function (...Link)
     return newLink;
 
 }
-export { Config ,Translation,Contributors,WebsiteLink,Projects,FormatLink}
+export {Translation,Contributors,WebsiteLink,Projects,FormatLink}

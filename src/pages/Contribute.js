@@ -74,11 +74,11 @@ class CTerms extends React.Component {
 class Ccontribute extends React.Component {
   // this map will create the list of Guide line element in the ui
   Contribute_Guide_Line() {
-     
+    let index=0
     return List.map((Line) => {
        
       return (
-        <div className="guide-line-text-size font-normal  guide-line-size h-12  rounded-2xl font-simebold p-4 shadow-sm ">
+        <div key={index++} className="guide-line-text-size font-normal  guide-line-size h-12  rounded-2xl font-simebold p-4 shadow-sm ">
           {Line}
         </div>
       );

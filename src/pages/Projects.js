@@ -127,12 +127,15 @@ class CProjectCard extends React.Component {
 class CProjectsGrid extends React.Component {
     Scroller = React.createRef()    
     CreateRows() {
+		let index=0
 		return Projects.map((row) => {
+			index++
 			return (
 				<CProjectCard
 					disc={row.disc}
 					name={row.name}
 					link={row.link}
+					key={index}
 				></CProjectCard>
 			);
 		});
