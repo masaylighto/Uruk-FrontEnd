@@ -1,7 +1,7 @@
 .Logo{
     background-image: url(../icons/Logo.svg);
-    width: 34%;
-    height: 57%;
+    width: 28%;
+    height: 56%;
 }
 .about-div{
     background: linear-gradient( 
@@ -34,7 +34,7 @@
 
 .about-us-contaner{
     width: 36%;
-    margin-left: 92px;
+   
 } 
 .about-div-inside{
     background-color: white;

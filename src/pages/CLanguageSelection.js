@@ -39,22 +39,19 @@ class CLanguageSelection extends React.Component {
     /** 
      this function will decide weather to load language card , inform user that fetching process failed  or if there is already selected language in the url       
     */
-    ProccessResponse(result){
-     
+    ProccessResponse(result){        
         if(result.State!=="Done")
         {
            this.FailedToLoad()
            return
-        }       
-        //parse the lanuage into Json
-        let Languages=JSON.parse(result.Data)
+        }           
         //if the url contain a lanuage and its exist in the langauge list we got from the backend then render the page
         // if url contain a lanuage  then terminate  the excution of this method
-        if(this.LanguageIsSelected(decodeURI(window.location.pathname),Languages))
+        if(this.LanguageIsSelected(decodeURI(window.location.pathname),result.Data))
         {
             return;
         }
-        this.setState({Elements:this.Languages(Languages)})     
+        this.setState({Elements:this.Languages(result.Data)})     
     }
     /**      
       @param {String} Path from window.location.pathname

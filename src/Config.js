@@ -1,10 +1,15 @@
 // the variable started with _ reperesent the api end point link
+// empty variable is the paramter name which gonna be taken through reflection 
 const Config ={
     Server:"http://127.0.0.1:8000/"
 }
 const Translation = {
     GetValue:"",
-    GetPageTranslations:"",
+    GetPageTranslations:{
+        _link:"translations/GetPageTranslations",
+        page_name:"",
+        language:""
+    },
     GetTranslation:"",
     GetLanguages:{            
         _link:"translations/GetLanguages",
