@@ -2,70 +2,8 @@ import React from "react";
 import "./../css/project.css";
 import "./../css/tailwind.css";
 import "./../css/shared.css";
+import {Projects,Translation,FormatLink} from './../Config'
 
-var Projects = [
-	{
-		name: "Uruk Cleaner",
-		disc: "Uruk Cleaner is a program that you can use to clean your system from cache files and logs",
-		link: "https://notabug.org/alimiracle/uruk-cleaner",
-	},
-	{
-		name: "UPMS",
-		disc: "UPMS(Uruk Package Managers Simulator). This program can simulate several common package managers commands, which means you can install, uninstall, update and remove the packages using any package manager you prefer to get the work done with.",
-		link: "https://notabug.org/alimiracle/uruk-cleaner",
-	},
-	{
-		name: "Uruk GNU/Linux",
-		disc: "Uruk GNU/Linux is a fully free operating system for home users, small enterprises and educational centers based on Trisquel.",
-		link: "https://notabug.org/alimiracle/uruk-cleaner",
-	},
-	{
-		name: "Uruk Ocr Server",
-		disc: "A Simple, small, powerful OCR web server used to convert images to text.",
-		link: "https://notabug.org/alimiracle/uruk-cleaner",
-	},
-	{
-		name: "Irc log recorder",
-		disc: "The Irc log recorder is an irc bot that logs the entire communication of an irc channel. It is equipped with a web server to enable users to access the logs from a web browser and/or telnet ",
-		link: "https://notabug.org/alimiracle/uruk-cleaner",
-	},
-	{
-		name: "Masalla Icon Theme",
-		disc: "Icon theme for *NIX OS inspired by the modern flat design trend. .",
-		link: "https://notabug.org/alimiracle/uruk-cleaner",
-	},
-	{
-		name: "Uruk Cloud IDE",
-		disc: "The UruCloudIDE Project is a free as in freedom cross platform integrated development environment running primarily, but not exclusively, on the free and open source cloud software. This piece of software is highly recommended for institutions, software development companies and developers. The project is still in beta",
-		link: "https://notabug.org/alimiracle/uruk-cleaner",
-	},
-	{
-		name: "Uruk Project website",
-		disc: "he source code for the Uruk project and the Uruk GNU/Linux website, based on the Peers website source code",
-		link: "https://notabug.org/alimiracle/uruk-cleaner",
-	},
-	{
-		name: "Rose Crypt",
-		disc: "Promote and facilitate encryption and decryption of files using AES",
-		link: "https://notabug.org/alimiracle/uruk-cleaner",
-	},
-	{
-		name: "quickpass",
-		disc: "quickpass is a command-line password manager and random password generator using just the commonly available Unix utilities.",
-		link: "https://notabug.org/alimiracle/uruk-cleaner",
-	},
-	{
-		name: "Clara",
-		disc: "Server Backup and Notifications bot",
-		link: "https://notabug.org/alimiracle/uruk-cleaner",
-	},
-	{
-		name: "UCC",
-		disc: "Uruk Control Center, Simple System Control Center for GNU/Linux System ( Only for XFCE4 and MATE DE for now ).",
-		link: "https://notabug.org/alimiracle/uruk-cleaner",
-	},
-
-];
 class CProjectCard extends React.Component {
 	AnimateToTop(Event) {
 		Event.target.animate(
@@ -126,25 +64,49 @@ class CProjectCard extends React.Component {
 
 class CProjectsGrid extends React.Component {
     Scroller = React.createRef()    
-    CreateRows() {
-		let index=0
-		return Projects.map((row) => {
-			index++
-			return (
-				<CProjectCard
-					disc={row.disc}
-					name={row.name}
-					link={row.link}
-					key={index}
-				></CProjectCard>
-			);
-		});
+	state={
+		element:""
 	}
-
  
-      
+     GetProject(){
+		
+        fetch(FormatLink(Projects.GetProjects,this.props.Langauge))
+        .then(result=>result.json())
+        .then(result =>this.ProccessResponse(result))
+	 } 
+	 ProccessResponse(Response){
+
+        if(Response.State!=="Done"){
+            return;
+        }     
+		let Projects = this.mapProjects(Response.Data);
+		
+		this.setState({element:Projects}) 
+
+	 }
+	mapProjects(Projects)
+	{
+		let index=0;
+	
+		return	Projects.map((element)=>{
+			index++;
+					return (
+
+						<CProjectCard
+						disc={element[2]}
+						name={element[0]}
+						link={element[1]}
+						key={index}>
+						</CProjectCard>
+					)
+		})
+
+	}
+	
     componentDidMount()
     {
+		this.GetProject()
+	
         let element = this.Scroller.current.parentElement;
        
         let Index=0;
@@ -170,8 +132,8 @@ class CProjectsGrid extends React.Component {
         return <div  ref={this.Scroller}
                 className="flex justify   after:between gap-3 flex-row">
                 {
-                
-                this.CreateRows()
+                this.state.element
+      
                 
                 }
                 </div>
@@ -179,16 +141,36 @@ class CProjectsGrid extends React.Component {
     }
 }
 class CProjects extends React.Component {
-
+	GetTranslation()
+	{
 	
+        fetch(FormatLink(Translation.GetPageTranslations,"Projects",this.props.Langauge))
+        .then(result=>result.json())
+        .then(result =>this.ProccessResponse(result))
+	}
+	ProccessResponse(Response)
+	{
+		if(Response.State!=="Done"){
+			return;
+		}
+		let Title =Response.Data.Title;
+		this.setState({Title})
+	}
+	state={
+		Title:""
+	}
+	componentDidMount()
+	{
+		this.GetTranslation();
+	}
 	render() {
 		return (
 			<div id="Projects" className="flex items-center  m-auto flex-col  w-full    ">
 				<p className="text-center   Special-text-color text-2xl my-10">
-					Uruk Projects
+					{this.state.Title}
 				</p>
 				<div id="test" className="flex items-center overflow-x-scroll scrollbar-none  w-full">
-			        <CProjectsGrid></CProjectsGrid>
+			        <CProjectsGrid Langauge={this.props.Langauge}></CProjectsGrid>
 				</div>
 			</div>
 		);

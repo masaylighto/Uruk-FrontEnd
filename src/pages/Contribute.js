@@ -2,15 +2,7 @@ import React from "react";
 import "./../css/contribute.css";
 import "./../css/tailwind.css";
 import "./../css/shared.css";
-
-var List = [
-  "All of our contributions respect software freedom",
-  "Non-free software may slip into our system, despite all of our efforts. We will be vigilant, and we will remove non-free software as soon as we find it",
-  "We demand there to be respect among community members",
-  "Do not discriminate against people based on age, gender, sex, sexual orientation, disability, religion, ideology, ideas, social class, nationality, race, intelligence, or any analogous grounds",
-  "Do not curse or use harsh language here. Social norms differ from place to place; harsh language can deter people from our community",
-  "Do not insult others here. Disagree and challenge ideas instead",
-];
+import {Contributors,Translation,FormatLink} from './../Config'
 
 
 class CTerms extends React.Component {
@@ -37,31 +29,16 @@ class CTerms extends React.Component {
       { duration: 300, direction: "normal", fill: "forwards" }
     );
   }
+  
   render() {
     return (
       <div
         onMouseEnter={this.ShowTerms}
         onMouseLeave={this.HideTerms}
         className="guide-line-text-size MaxWidth14rem  flex flex-col w-fit ml-14  mt-6 shadow rounded-2xl  p-4   ">
-        <div>Terms</div>
+        <div>{this.props.Terms}</div>
         <p className={"MaxHeightZero overflow-hidden"}>
-          If you have read and agreed on the above points , and would like to
-          help us, then the next question is: what would you like to do? You can
-          help the Uruk project in many ways; we need people to write
-          documentation, such as books, reference guides and online info; we
-          also need people to write software, do research, and many other tasks.
-          Because of all the different tasks at hand, we are confident that your
-          particular skills can help the Uruk Project; you don't have to be an
-          experienced software developer to help us. What skills and experience
-          do you have? Do you have experience writing large and complex
-          technical documents? Do you speak several human languages? Do you have
-          a unique skill? Are you a Unix hacker, or are you still learning?
-          Obviously, the answers to these questions will determine the sorts of
-          jobs that you may want to attempt to do. For example, if you've never
-          written any documentation then you probably don't want to attempt to
-          write a C++ STL tutorial or reference. If you have little mathematical
-          expertise then you probably won't want to work on a statistical
-          analysis package. If you find any issue,you can report it on
+        {this.props.text}
         </p>
 
         <a href="https://uruk.tuxfamily.org/bt/login_page.php" className="text-blue-300">
@@ -73,9 +50,9 @@ class CTerms extends React.Component {
 }
 class Ccontribute extends React.Component {
   // this map will create the list of Guide line element in the ui
-  Contribute_Guide_Line() {
+  Contribute_Guide_Line(...Lines) {
     let index=0
-    return List.map((Line) => {
+    return Lines.map((Line) => {
        
       return (
         <div key={index++} className="guide-line-text-size font-normal  guide-line-size h-12  rounded-2xl font-simebold p-4 shadow-sm ">
@@ -94,19 +71,56 @@ class Ccontribute extends React.Component {
     );
   }
 
+  GetTranslation()
+	{
+	
+        fetch(FormatLink(Translation.GetPageTranslations,"Contribute",this.props.Langauge))
+        .then(result=>result.json())
+        .then(result =>this.ProccessResponse(result))
+	}
+	ProccessResponse(Response)
+	{
+		if(Response.State!=="Done"){
+			return;
+		}
+    Response=Response.Data    
+    let GuideLine=this.CreateGuideLine(Response.GuideLine1,Response.GuideLine2,Response.GuideLine3,Response.GuideLine4,Response.GuideLine5,Response.GuideLine6)
+    let Terms = this.CreateTerms(Response.TermsWord,Response.Terms)
+    let Title = Response.Title
+    let ReadFirst = Response.ReadFirst
+    this.setState({GuideLine,Terms,Title,ReadFirst})
+	}
+	state={
+		Title:"",
+    ReadFirst:"",
+    GuideLine:"",
+    Terms:""
+	}
+	componentDidMount()
+	{
+		this.GetTranslation();
+	}
+  CreateGuideLine(...GuideLine){
+    return this.Contribute_Guide_Line(...GuideLine) 
+  }
+  CreateTerms(TermsWord,Terms)
+  {
+    return <CTerms Terms={TermsWord} text={Terms} />  
+  }
   render() {
     return (
-      <div id="Contribute" className="flex H100Vmin mt-10   page-hight    flex-col">
+      <div dir={this.props.Langauge==="العربية"?"rtl":"ltr"}  id="Contribute" className="flex H100Vmin mt-10   page-hight    flex-col">
         <p className="  Special-text-color text-2xl mt-10  mx-auto    w-fit">
-          How To Contribute
-        </p>
+          {this.state.Title}
+         </p>
         <p className=" Special-text-color  mb-10 mx-auto   w-fit">
-          If you want to contribute, read this first:
+          {this.state.ReadFirst}
         </p>
         <div className="flex flex-col ml-10 gap-3  mt-2">
-          <this.Contribute_Guide_Line />
+          {this.state.GuideLine}
+          
         </div>
-        <CTerms />    
+        {this.state.Terms}     
       </div>
     );
   }

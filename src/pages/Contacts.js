@@ -1,49 +1,19 @@
 import React from "react";
 import './../css/shared.css'
 import './../css/tailwind.css'
+import {ProjectsMember,Translation,FormatLink} from './../Config'
 
-var ProjectsMember = [
-    {
-      Name:"Ali Abdul Ghani",
-      Email:"alimiracle@riseup.net"
-    },
-    {
-      Name:"Hayder Majid",
-      Email:"hayder@riseup.net"
-    },
-    {
-      Name:"Azzen Abidi	",
-      Email:"azzen.abidi@gmail.com"
-    },
-    {
-      Name:"Norah",
-      Email:"norah@riseup.net"
-    },
-    {
-      Name:"Zakaria Mekki Belbali	",
-      Email:"zakibelbali12@gmail.com"
-    },
-    {
-      Name:"kzimmermann",
-      Email:"kzimmermann@vivaldi.net"
-    },
-    {
-      Name:"Ahmad Nourallah	",
-      Email:"ahmadnurallah@gmail.com"
-    },
-  ];
-  
   
 
 class Ccontacts extends React.Component
 {   
 
   //create List of Projects row
-  ContributorCard() {
+  ContributorCard(data) {
      let index=1;
-    return ProjectsMember.map((Row) => {
+    return data.map((Row) => {
       index++
-      return this.Card(Row.Name, Row.Email,index);
+      return this.Card(Row[0], Row[1],index);
     });
   }
   CopyToClipboard(Text,Element){
@@ -67,12 +37,52 @@ class Ccontacts extends React.Component
       </div>
     );
   }
+  state={
+    Title:"",
+    Cards:""
+  }
+  componentDidMount()
+  {
+    this.getContributors()
+    this.getTranslation();
+  }
+  getContributors()
+  {	
+     fetch(FormatLink(ProjectsMember.GetMember,this.props.Langauge))
+    .then(result=>result.json())
+    .then(result =>this.FillContributorCard(result))
+  }
+  getTranslation()
+  {	
+     fetch(FormatLink(Translation.GetPageTranslations,"Contacts",this.props.Langauge))
+    .then(result=>result.json())
+    .then(result =>this.FillTextFields(result))
+  }
+  FillTextFields(Response){
+ 
+    if(Response.State!=="Done"){
+      return;
+    }   
 
+    Response=Response.Data
+    this.state.Title=Response.Title
+    this.setState(this.state)
+  }
+  FillContributorCard(Response)
+  {
+    if(Response.State!=="Done"){
+      return;
+    }   
+    Response=Response.Data
+    let Cards= this.ContributorCard(Response)
+    this.state.Cards=Cards
+    this.setState(this.state)
+  }
 //create table that represent the ui
 ContributorsGrid() {
     return (
       <div className="grid justify-center grid-auto-column w-full gap-1  mt-10   flex-col  ">
-        {this.ContributorCard()}
+        {this.state.Cards}
       </div>
     );
   }
@@ -81,7 +91,7 @@ ContributorsGrid() {
     return (
      
         <div id="Contacts" className="flex   H100Vmin mt-10     flex-col">
-          <p className=" text-center   Special-text-color text-2xl my-10">Project Members </p>
+          <p className=" text-center   Special-text-color text-2xl my-10">{this.state.Title} </p>
           {this.ContributorsGrid()}
         </div>
     

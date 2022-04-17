@@ -24,7 +24,16 @@ const WebsiteLink={
     }
 }
 const Projects={
-
+    GetProjects:{
+        _link:"projects/GetProjects",
+        language:""
+    }
+}
+const ProjectsMember={
+    GetMember:{
+        _link:"project_members/GetMembers",
+        language:""
+    }
 }
 /**
      this method will receive one of const anonynmous variable that reperesent the endpoint information ( above )
@@ -63,4 +72,4 @@ const FormatLink = function (...Link)
     return newLink;
 
 }
-export {Translation,Contributors,WebsiteLink,Projects,FormatLink}
+export {ProjectsMember,Translation,Contributors,WebsiteLink,Projects,FormatLink}
