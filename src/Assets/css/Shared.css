@@ -1,0 +1,18 @@
+@font-face {
+    font-family: Noto;
+    src: url(../fonts/Noto_Sans/NotoSans-Regular.ttf);
+  }
+.H-100Vmin{
+    height: 100vmin;
+}
+.Bg-Gradiant-Blue{
+    background: linear-gradient(90deg,#50c7f1,#038ed5);
+}
+.Text-Gradiant-Blue{
+    background: linear-gradient(90deg,#50c7f1,#038ed5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+*{
+    font-family: Noto;
+}
