@@ -16,3 +16,6 @@
 *{
     font-family: Noto;
 }
+.Logo{
+    background-image:url(../Icons/Logo.png) ;
+}

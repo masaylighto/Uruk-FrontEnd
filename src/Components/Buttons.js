@@ -4,7 +4,7 @@ class CTransparentButton extends React.Component{
     
     render()
     {
-      return (<button  onClick={this.props.onClick} className="p-4 h-full flex justify-center items-center text-white">{this.props.Text}</button>)
+      return (<button  onClick={this.props.onClick} className="p-4 h-14 flex justify-center items-center text-white">{this.props.Text}</button>)
     }
 }
 export {CTransparentButton}

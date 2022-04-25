@@ -6,8 +6,6 @@ import ReactDOM from 'react-dom';
  * @returns Response Data
  */
 const QuitIfInVaild=(Response)=>{
-    
-    console.log(Response)
     if(Response.State==="Done"){
         return Response.Data 
     }  
