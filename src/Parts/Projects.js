@@ -99,7 +99,7 @@ class CProjects extends React.Component{
     }
     
     ProjectsGrid(){
-        return (<div  className={'grid gap-4 justify-center grid-auto-cols h-96  Grid-W-250 '}>
+        return (<div  className={'grid gap-4 h-fit justify-center grid-auto-cols   Grid-W-250 '}>
             {this.state.Cards}
             
         </div>)
@@ -110,7 +110,7 @@ class CProjects extends React.Component{
     }
     render()
     {
-        return (<div className='w-full gap-28 flex  flex-col'>
+        return (<div className='w-full h-fit pb-10 gap-28 flex  flex-col'>
         {this.PartTitle()}
         {this.ProjectsGrid()}
         

@@ -9,6 +9,9 @@
 .H-100Vmin{
     height: 100vmin;
 }
+.MH-100Vmin{
+    min-height: 100vmin;
+}
 .H-90Vmin{
     height: 90vmin;
 }

@@ -4,6 +4,7 @@ import CNavbar from '../Parts/Navbar';
 import '../Assets/css/tailwind.css'
 import '../Assets/css/Shared.css'
 import  Projects  from '../Parts/Projects';
+import  CContribution  from '../Parts/Contribution';
 import {Wave} from '../Components/Varity'
 class CMain extends React.Component{
     render()
@@ -13,6 +14,7 @@ class CMain extends React.Component{
                  <CHome Language={"English"}/>
                  <Wave/>
                  <Projects Language={"English"}></Projects>
+                 <CContribution Language={"English"}></CContribution>
             </div>
         )
     }
