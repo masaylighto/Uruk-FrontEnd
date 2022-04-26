@@ -10,6 +10,6 @@ function Wave()
 }
 function Tringle(props)
 {
-    return <SvgTraingle className={'sm:visible invisible '+props.className}></SvgTraingle>
+    return <SvgTraingle className={'sm:visible invisible  h-44P w-full '+props.className}></SvgTraingle>
 }
 export {Wave,Tringle}

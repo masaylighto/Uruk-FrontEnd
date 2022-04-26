@@ -6,6 +6,7 @@ import '../Assets/css/Shared.css'
 import  Projects  from '../Parts/Projects';
 import  CContribution  from '../Parts/Contribution';
 import {Wave} from '../Components/Varity'
+import CContributers from '../Parts/Contributers';
 class CMain extends React.Component{
     render()
     {
@@ -15,6 +16,7 @@ class CMain extends React.Component{
                  <Wave/>
                  <Projects Language={"English"}></Projects>
                  <CContribution Language={"English"}></CContribution>
+                 <CContributers Language={"English"}></CContributers>
             </div>
         )
     }

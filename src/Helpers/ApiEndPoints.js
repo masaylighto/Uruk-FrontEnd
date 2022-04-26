@@ -5,7 +5,7 @@ const Translation = {
     GetLanguages:"translations/GetLanguages"
 }
 const Contributors = {
-
+    GetContributors:"contributors/GetContributors?language={0}"
 }
 const WebsiteLink={
     GetLinks:"website_link/GetLinks?language={0}"

@@ -72,7 +72,7 @@ class CContribution extends React.Component{
         return (
                  <div className='MH-100Vmin relative  flex justify-center items-center Bg-Gradiant-Blue w-full'>
                    {this.CenteredDiv()}
-                   <Tringle className={"absolute bottom-0 left-0 right-0 h-44P w-full"}/>
+                   <Tringle className={"absolute bottom-0 left-0 right-0"}/>
                  </div>
 
         )

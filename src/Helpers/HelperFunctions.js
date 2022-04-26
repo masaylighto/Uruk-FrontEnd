@@ -20,4 +20,10 @@ const QuitReact=(Text)=>{
       document.getElementById('root')
     );
 }
-export {QuitIfInVaild,QuitReact}
+const CopyToClipboard=(Text,Element)=>{
+    window.navigator.clipboard.writeText(Text)   
+    let OldText =  Element.innerText
+    Element.innerText="✓"
+    setTimeout(()=>{Element.innerText=OldText},500)
+  }
+export {QuitIfInVaild,QuitReact,CopyToClipboard}
