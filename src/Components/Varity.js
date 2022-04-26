@@ -5,6 +5,6 @@ import '../Assets/css/Shared.css'
 import { ReactComponent as SvgWave } from '../Assets/Icons/wave.svg';
 function Wave()
 {
-    return <SvgWave className='-mt-32  h-64 w-full Bg-Gradiant-Blue'></SvgWave>
+    return <SvgWave className='-mt-32  h-56 sm:visible invisible w-full Bg-Gradiant-Blue'></SvgWave>
 }
 export {Wave}
