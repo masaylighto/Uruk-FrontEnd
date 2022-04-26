@@ -7,3 +7,6 @@
 .h-44P{
     height: 43%;
 }
+.flipInverse{
+    transform: rotateX(180deg) rotateY(180deg);
+}

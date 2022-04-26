@@ -25,7 +25,7 @@ class CContributers extends React.Component{
     GetTranslation()
     {
     
-        fetch(FormatLink(Translation.GetPageTranslations,"Contributers",this.props.Language))
+        fetch(FormatLink(Translation.GetPageTranslations,"Members",this.props.Language))
         .then(result=>result.json())
         .then(result=>QuitIfInVaild(result))
         .then(result =>this.SetTranslation(result))
@@ -43,7 +43,7 @@ class CContributers extends React.Component{
       
     
        return (<div key={Index} className={'rounded flex justify-between  h-60 shadow flex-col relative '}>
-           <div   className=' text-black font-bold text-center h-6 mb-3 w-full flex justify-center items-center'>
+           <div   className=' text-black text-lg font-normal text-center h-6 mb-3 w-full flex justify-center items-center'>
            {Contributer.name}
            </div>
            <div  className='h-50 bg-white   w-full flex overflow-scroll scrollbar-none'>
@@ -64,7 +64,7 @@ class CContributers extends React.Component{
    CreateCards(Contributers){
        
        this.state.Cards = Contributers.map((Contributer,index)=>{
-          console.log(Contributer)
+        
            return this.Card(Contributer,index)
        })  
        this.setState(this.state)
