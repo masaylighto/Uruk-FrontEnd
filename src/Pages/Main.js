@@ -11,14 +11,14 @@ import CMembers from '../Parts/Members';
 class CMain extends React.Component{
     render()
     {
-    return ( <div className='flex items-center scrollbar-none w-full flex-col'>
-                 <CNavbar Language={"English"}/>
-                 <CHome Language={"English"}/>
+    return ( <div dir={this.props.Language==="العربية"?"rtl":"ltr"}  className='flex items-center scrollbar-none w-full flex-col'>
+                 <CNavbar Language={this.props.Language}/>
+                 <CHome Language={this.props.Language}/>
                  <Wave/>
-                 <Projects Language={"English"}></Projects>
-                 <CContribution Language={"English"}></CContribution>
-                 <CContributers Language={"English"}></CContributers>
-                 <CMembers Language={"English"}></CMembers>
+                 <Projects Language={this.props.Language}></Projects>
+                 <CContribution Language={this.props.Language}></CContribution>
+                 <CContributers Language={this.props.Language}></CContributers>
+                 <CMembers Language={this.props.Language}></CMembers>
             </div>
         )
     }

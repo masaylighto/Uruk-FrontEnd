@@ -8,12 +8,14 @@ import ReactDOM from 'react-dom';
 const QuitIfInVaild=(Response)=>{
 
     if(Response.State==="Done"){
+      
         return Response.Data 
     }  
     QuitReact("Failed to retrieve Data from the server");   
   
 }
 const QuitReact=(Text)=>{
+  
     ReactDOM.render
     (
       <CFail Text={Text}/>,

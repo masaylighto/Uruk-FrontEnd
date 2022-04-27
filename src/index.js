@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import CLanguage from './Pages/Language';
+
 import reportWebVitals from './reportWebVitals';
 
-import CMain from './Pages/Main';
+
 
 ReactDOM.render
 (
-  <CMain/>,
+  <CLanguage/>,
   document.getElementById('root')
 );
 
