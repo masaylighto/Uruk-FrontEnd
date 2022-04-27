@@ -110,7 +110,7 @@ class CProjects extends React.Component{
     }
     render()
     {
-        return (<div className='w-full h-fit pb-10 gap-28 flex  flex-col'>
+        return (<div id='Projects' className='w-full h-fit pb-10 gap-28 flex  flex-col'>
         {this.PartTitle()}
         {this.ProjectsGrid()}
         

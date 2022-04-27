@@ -82,7 +82,7 @@ class CMembers extends React.Component{
    }
    render()
    {
-       return (<div className='w-full relative Bg-Gradiant-Blue h-fit pb-10  flex  flex-col'>
+       return (<div id='members' className='w-full relative Bg-Gradiant-Blue h-fit pb-10  flex  flex-col'>
              <Tringle className={"absolute flipInverse  top-0 -mt-11  left-0 right-0"}/>
        {this.PartTitle()}
        {this.ContributersGrid()}

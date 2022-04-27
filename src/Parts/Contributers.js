@@ -82,7 +82,7 @@ class CContributers extends React.Component{
    }
    render()
    {
-       return (<div className='w-full h-fit pb-10 gap-28 flex  flex-col'>
+       return (<div id='Contributers' className='w-full h-fit pb-10 gap-28 flex  flex-col'>
        {this.PartTitle()}
        {this.ContributersGrid()}
        

@@ -64,7 +64,7 @@ class CHome extends React.Component{
   
     render()
     {
-        return <div className='w-full flex  flex-col Bg-Gradiant-Blue'>
+        return <div  id='Home' className='w-full flex  flex-col Bg-Gradiant-Blue'>
        {this.CenteredDiv()}
       
       
