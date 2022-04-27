@@ -2,13 +2,14 @@ import React from 'react';
 import '../Assets/css/tailwind.css'
 import '../Assets/css/Contribution.css'
 import '../Assets/css/Shared.css'
-import {FormatLink,Translation} from '../Helpers/ApiEndPoints'
+import {FormatLink,Translation,ContributionGuideLines} from '../Helpers/ApiEndPoints'
 import {QuitIfInVaild, QuitReact} from '../Helpers/HelperFunctions'
 import { Tringle } from '../Components/Varity';
 
 class CContribution extends React.Component{
     componentDidMount(){
         this.GetTranslation()
+        this.GetContributionGuideLines()
     }
     GetTranslation()
     {
@@ -18,6 +19,14 @@ class CContribution extends React.Component{
         .then(result =>this.SetTranslation(result))
         .catch(()=>QuitReact("Failed to retrieve Data from the server"))
     } 
+    GetContributionGuideLines()
+    {
+        fetch(FormatLink(ContributionGuideLines.Get,this.props.Language))
+        .then(result=>result.json())
+        .then(result=>QuitIfInVaild(result))
+        .then(result =>this.ContributionGuideLine(result))
+        .catch(()=>QuitReact("Failed to retrieve Data from the server"))
+    }
     CenteredDiv()
     {
         
@@ -37,10 +46,10 @@ class CContribution extends React.Component{
     SetTranslation(Response)
 	{
 	
-    let GuideLines = this.ContributionGuideLine(Response.GuideLine1,Response.GuideLine2,Response.GuideLine3,Response.GuideLine4,Response.GuideLine5,Response.GuideLine6)
-    let Terms = this.CreateTerms(Response.Terms)
-    let Title = this.Title(Response.Title)
-    this.setState({GuideLines,Terms,Title})
+        this.state.Terms= this.CreateTerms(Response.Terms)
+        this.state.Title=this.Title(Response.Title)
+   
+    this.setState(this.state)
 	}
 	state={
 		Title:"",    
@@ -53,17 +62,18 @@ class CContribution extends React.Component{
     CreateTerms(Terms){
         return <p className=''>{Terms}</p>
     }
-    ContributionGuideLine(...Lines) {
-        
-        return Lines.map((Line,index) => {
+    ContributionGuideLine(Lines) {
+             
+        this.state.GuideLines= Lines.map((Line,index) => {
           return (
             <li key={index} className='text-blue-300'>
                 <span className='text-black'>
-                 {Line}
+                 {Line.guideLine}
                 </span>
             </li>
           );
         });
+        this.setState(this.state)
       }
     
     

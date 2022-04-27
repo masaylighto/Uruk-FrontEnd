@@ -4,6 +4,14 @@ const Translation = {
     GetPageTranslations:"translations/GetPageTranslations?page_name={0}&language={1}",  
     GetLanguages:"translations/GetLanguages"
 }
+
+const ContactOptions = {
+    Get:"Contacts/Get?language={0}"
+}
+
+const ContributionGuideLines = {
+    Get:"ContributionGuideLine/Get?language={0}"
+}
 const Contributors = {
     GetContributors:"contributors/GetContributors?language={0}"
 }
@@ -26,7 +34,8 @@ const FormatLink = function (Link,...Paramters)
         newLink=newLink.replace(`{${index}}`,paramter)
         index++
     }  
+
     return newLink;
 
 }
-export {ProjectsMember,Translation,Contributors,WebsiteLink,Projects,FormatLink}
+export {ProjectsMember,Translation,Contributors,WebsiteLink,Projects,ContactOptions,ContributionGuideLines,FormatLink}

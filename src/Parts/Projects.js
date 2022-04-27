@@ -79,7 +79,7 @@ class CProjects extends React.Component{
                 {project[2]}
                 </div>
             </div>
-            <a href={project[1]} className='h-12 hover-Darken w-full text-white justify-center items-center flex text-center mx-auto'>{this.state.Visit}</a>
+            <a href={project[1]} className='h-12 hover-Darken active-Darken w-full text-white justify-center items-center flex text-center mx-auto'>{this.state.Visit}</a>
         </div>
         )
     }

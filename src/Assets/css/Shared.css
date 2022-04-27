@@ -71,7 +71,7 @@
 .hover-Darken:hover{
 background-color: rgba(0, 0, 0, 0.100);
 }
-.hover-Darken:active{
+.active-Darken:active{
     background-color: rgba(0, 0, 0, 0.200);
     }
     .Bg-White-Trans-30{

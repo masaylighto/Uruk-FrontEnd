@@ -8,6 +8,7 @@ import  CContribution  from '../Parts/Contribution';
 import {Wave} from '../Components/Varity'
 import CContributers from '../Parts/Contributers';
 import CMembers from '../Parts/Members';
+import CContacts from '../Parts/Contact';
 class CMain extends React.Component{
     render()
     {
@@ -19,6 +20,7 @@ class CMain extends React.Component{
                  <CContribution Language={this.props.Language}></CContribution>
                  <CContributers Language={this.props.Language}></CContributers>
                  <CMembers Language={this.props.Language}></CMembers>
+                 <CContacts Language={this.props.Language}></CContacts>
             </div>
         )
     }
