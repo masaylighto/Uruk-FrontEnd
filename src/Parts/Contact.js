@@ -3,6 +3,7 @@ import '../Assets/css/tailwind.css'
 import '../Assets/css/Shared.css'
 import {FormatLink,Translation,ContactOptions} from '../Helpers/ApiEndPoints'
 import {QuitIfInVaild, QuitReact} from '../Helpers/HelperFunctions'
+let Colors=["#038ed56e","#0071b69e","#0056979e","#003d7a9e","#00255d9e"]
 class CContacts extends React.Component{
     componentDidMount(){
         this.GetTranslation()
@@ -49,10 +50,20 @@ class CContacts extends React.Component{
       
         this.setState(this.state)
     }
+    KeepIndexInRange(Index){
+        //this to keep the index that used to determine the color in the Color Array Range 
+        //through subtracting the lenghth from the index continuously if the index was larger than the range
+       let ColorIndex=Index
+       while(ColorIndex>Colors.length-1){
+           
+           ColorIndex-=Colors.length-1;
+       }
+       return ColorIndex
+   }
     OptionNode(Option,Index){
         
-        return          <li key={Index} className='text-blue-300 rounded-2xl hover-Darken bg-white shadow w-fit p-5 '>
-            <span className='text-black text-xl'>
+        return          <li key={Index}  className='text-white Bg-Gradiant-Blue  rounded-2xl hover-Darken  shadow w-fit p-3 '>
+            <span className='text-white text-xl'>
               {Option}
             </span>
          </li>
