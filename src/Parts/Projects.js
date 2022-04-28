@@ -68,18 +68,18 @@ class CProjects extends React.Component{
 			{ duration: 200, iterations: 1, direction: "normal", fill: "forwards" })
     }
     ProjectsCard(project,Index){
-       
+     
      
         return (<div key={Index} style={{backgroundColor:Colors[this.KeepIndexInRange(Index)]}} className={'rounded-2xl flex  h-60 shadow flex-col relative '}>
             <div  onMouseEnter={(Event)=>this.MoveUpEffect(  Event.target)} style={{backgroundColor:Colors[this.KeepIndexInRange(Index)]}} className='h-60 rounded-2xl   text-white text-2xl absolute left-0 right-0 bottom-0 top-0 w-full flex justify-center items-center'>
-            {project[0]}
+            {project.name}
             </div>
             <div   style={{padding:1+"px"}} className='h-56 bg-white   w-full flex overflow-scroll scrollbar-none'>
                 <div onMouseLeave={(Event)=>this.MoveDownEffect(Event.target.parentElement.parentElement.children[0])} className='h-fit bg-white rounded p-4 text-black w-full flex justify-center items-center'>
-                {project[2]}
+                {project.description}
                 </div>
             </div>
-            <a href={project[1]} className='h-12 hover-Darken active-Darken w-full text-white justify-center items-center flex text-center mx-auto'>{this.state.Visit}</a>
+            <a href={project.link} className='h-12 hover-Darken active-Darken w-full text-white justify-center items-center flex text-center mx-auto'>{this.state.Visit}</a>
         </div>
         )
     }
