@@ -42,7 +42,7 @@ class CContributers extends React.Component{
    Card(Contributer,Index){
       
     
-       return (<div key={Index} className={'rounded flex justify-between  h-60 shadow flex-col relative '}>
+       return (<div key={Index} className={'rounded-2xl flex justify-between  h-60 shadow flex-col relative '}>
            <div   className=' text-black text-lg font-normal text-center h-6 mb-3 w-full flex justify-center items-center'>
            {Contributer.name}
            </div>
@@ -51,7 +51,7 @@ class CContributers extends React.Component{
                {Contributer.contributions}
                </div>
            </div>
-           <div className='w-full rounded-b flex justify-center items-center text-center text-lg h-12 Bg-Gradiant-Blue text-white' onClick={(Event)=>CopyToClipboard(Contributer.email,Event.target)}>{this.state.Copy}</div>
+           <div className='w-full rounded-b-2xl flex justify-center items-center text-center text-lg h-12 Bg-Gradiant-Blue text-white' onClick={(Event)=>CopyToClipboard(Contributer.email,Event.target)}>{this.state.Copy}</div>
        </div>
        )
    }

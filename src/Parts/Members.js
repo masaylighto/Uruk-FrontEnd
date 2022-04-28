@@ -42,7 +42,7 @@ class CMembers extends React.Component{
    Card(Members,Index){
       
     
-       return (<div key={Index} className={'rounded bg-white flex justify-between  h-60 shadow flex-col relative '}>
+       return (<div key={Index} className={'rounded-2xl bg-white flex justify-between  h-60 shadow flex-col relative '}>
            <div   className=' text-black mt-3 font-bold text-center h-6 mb-3 w-full flex justify-center items-center'>
            {Members[0]}
            </div>
@@ -51,7 +51,7 @@ class CMembers extends React.Component{
                {Members[1]}
                </div>
            </div>
-           <div className='w-full rounded-b flex justify-center items-center text-center text-lg h-12 Bg-Gradiant-Blue text-white' onClick={(Event)=>CopyToClipboard(Members[2],Event.target)}>{this.state.Copy}</div>
+           <div className='w-full rounded-b-2xl flex justify-center items-center text-center text-lg h-12 Bg-Gradiant-Blue text-white' onClick={(Event)=>CopyToClipboard(Members[2],Event.target)}>{this.state.Copy}</div>
        </div>
        )
    }
@@ -83,7 +83,7 @@ class CMembers extends React.Component{
    render()
    {
        return (<div id='members' className='w-full relative Bg-Gradiant-Blue h-fit pb-10  flex  flex-col'>
-             <Tringle className={"absolute flipInverse  top-0 -mt-11  left-0 right-0"}/>
+       <Tringle className={"absolute flipInverse  top-0 -mt-11  left-0 right-0"}/>
        {this.PartTitle()}
        {this.ContributersGrid()}
        

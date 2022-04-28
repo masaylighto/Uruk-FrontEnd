@@ -90,7 +90,7 @@
     </g>
   </defs>
   <ellipse
-     style="fill:none;fill-rule:evenodd;stroke:#038ed5;stroke-width:2.64583331;fill-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     style="fill:none;fill-rule:evenodd;stroke:#9cf087;stroke-width:2.64583331;fill-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      id="path841"
      cx="75.621613"
      cy="75.020905"
@@ -98,7 +98,7 @@
      ry="58.311401" />
   <path
      id="rect843"
-     style="fill:#038ed5;fill-rule:evenodd;stroke:none;stroke-width:0.264583;fill-opacity:1"
+     style="fill:#9cf087;fill-rule:evenodd;stroke:none;stroke-width:0.264583;fill-opacity:1"
      d="M 59.270025,32.731773 102.05507,76.98845 59.209329,118.40946 c -0.527032,-28.561755 -0.24251,-57.116892 0.0607,-85.677687 z"
      sodipodi:nodetypes="cccc" />
 </svg>

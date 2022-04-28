@@ -16,7 +16,7 @@ class CHome extends React.Component{
     }
     UrukVoice(){
 
-        return <button className="player-icon bg-cover w-10 h-10 mx-auto" onClick={(e)=>{e.target.children[0].play()}}> 
+        return <button className="player-icon bg-cover w-10 h-10 mx-52" onClick={(e)=>{e.target.children[0].play()}}> 
             <audio id="player"    src={uruk_voice}>                        
             If you are reading this, it is because your browser does not support the audio element.
             </audio>
@@ -35,7 +35,7 @@ class CHome extends React.Component{
     }
     Text()
     {
-        return <p className='px-7 bg-white mx-auto'>
+        return <p className='px-7 text-white md:w-2/3 w-full '>
                {this.state.Desc}
         </p>
     }
@@ -45,17 +45,14 @@ class CHome extends React.Component{
     }
     Logo()
     {
-        return <div className='Logo bg-cover  w-56 h-32 mx-auto'></div>
+        return <div className='Logo bg-cover bg-no-repeat  w-96 h-56 '></div>
     }
     CenteredDiv()
     {
         
         return (
-             <div className='W-500 z-20 py-5 shadow flex mt-40 mb-10 flex-col justify-evenly items-center   mx-auto rounded-xl bg-white'>
+             <div className='flex flex-row h-96'>
                
-                <this.Logo/>
-                {this.Text()}
-                <this.UrukVoice/>
             
             </div>
         )
@@ -64,10 +61,18 @@ class CHome extends React.Component{
   
     render()
     {
-        return <div  id='Home' className='w-full flex  flex-col Bg-Gradiant-Blue'>
-       {this.CenteredDiv()}
-      
-      
+        return <div  id='Home' className='w-full z-10  md:py-44 py-24  h-fit Bg-Gradiant-Blue'>
+            <div className='flex flex-col items-center md:flex-row'>
+           <div className='md:w-1/2 flex justify-center items-center'>
+            <this.Logo/>
+            </div>
+            <div className='md:w-1/2 flex-col justify-center items-center'>
+            {this.Text()}
+            <this.UrukVoice/>
+            </div>
+              
+               
+            </div>
         </div>
     }
 }

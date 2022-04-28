@@ -31,7 +31,7 @@ class CContribution extends React.Component{
     {
         
         return (
-             <div className='w-4/6 z-20 p-5 shadow flex   flex-col    rounded-xl bg-white'>
+             <div className='md:w-4/6 w-full z-20 p-5 shadow flex   flex-col    md:rounded-2xl bg-white'>
              {this.state.Title}
              <div className='my-6 mx-5'>
              {this.state.GuideLines}
@@ -80,9 +80,8 @@ class CContribution extends React.Component{
     render(){
 
         return (
-                 <div id='Contribution' className='MH-100Vmin relative  flex justify-center items-center Bg-Gradiant-Blue w-full'>
+                 <div id='Contribution' className='MH-100Vmin relative bg-gradiant-blue-Cliped-down flex justify-center items-center  w-full'>
                    {this.CenteredDiv()}
-                   <Tringle className={"absolute bottom-0 left-0 right-0"}/>
                  </div>
 
         )

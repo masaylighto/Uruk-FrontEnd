@@ -4,7 +4,6 @@
   }
   :root{
       --Grid-width:200px;
-   
   }
 .H-100Vmin{
     height: 100vmin;
@@ -92,3 +91,10 @@ background-color: rgba(0, 0, 0, 0.100);
     .Bg-White-Trans-80{
         background-color: rgba(255, 255, 255, 0.8);
     }
+
+ 
+    .bg-gradiant-blue-Cliped-down{
+       
+        background: linear-gradient(194deg,#50c7f1,#038ed5 65%, white 63%)
+    }
+  

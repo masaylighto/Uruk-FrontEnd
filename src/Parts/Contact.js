@@ -62,8 +62,8 @@ class CContacts extends React.Component{
    }
     OptionNode(Option,Index){
         
-        return          <li key={Index}  className='text-white Bg-Gradiant-Blue  rounded-2xl hover-Darken  shadow w-fit p-3 '>
-            <span className='text-white text-xl'>
+        return          <li key={Index}  className='text-blue-300 text-xl   rounded-2xl hover-Darken   w-fit p-3 '>
+            <span className='text-black  text-xl'>
               {Option}
             </span>
          </li>
