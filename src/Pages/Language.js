@@ -104,8 +104,8 @@ class CLanguage extends React.Component {
    
     render() {
         //The Element is in the state variable so we can render the ui depend on the server response
-        return <div  className="Bg-Gradiant-Blue w-full H-100Vmin flex justify-center items-center">  
-          <div className="grid  rounded-lg w-5/6 justify-between  grid-auto-cols gap-3 ">
+        return <div  class="Bg-Gradiant-Blue w-full flex justify-center items-center" >  
+          <div className="grid  rounded-lg w-5/6 justify-between  grid-auto-cols gap-3 " style={{margin:"20% 0"}}>
          {this.state.Elements}
          </div>
         </div>
