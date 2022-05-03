@@ -43,7 +43,7 @@ class CContributers extends React.Component{
       
     
        return (<div key={Index} className={'rounded-2xl flex justify-between  h-60 shadow flex-col relative '}>
-           <div   className=' text-black text-base	 text-lg font-normal text-center h-6 mb-3 w-full flex justify-center items-center'>
+           <div   className=' text-black text-base font-normal text-center h-6 mb-3 w-full flex justify-center items-center'>
            {Contributer.name}
            </div>
            <div  className='h-50 bg-white   w-full flex overflow-scroll scrollbar-none'>
