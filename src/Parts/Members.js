@@ -51,7 +51,7 @@ class CMembers extends React.Component{
                {Members[1]}
                </div>
            </div>
-           <div className='w-full rounded-b-2xl flex justify-center items-center text-center text-lg h-12 Bg-Gradiant-Blue text-white' onClick={(Event)=>CopyToClipboard(Members[2],Event.target)}>{this.state.Copy}</div>
+           <div className='w-full rounded-b-2xl flex justify-center items-center text-center text-base h-12 Bg-Gradiant-Blue text-white' onClick={(Event)=>CopyToClipboard(Members[2],Event.target)}>{this.state.Copy}</div>
        </div>
        )
    }
@@ -71,14 +71,14 @@ class CMembers extends React.Component{
    }
    
    ContributersGrid(){
-       return (<div  className={'grid gap-4 h-fit justify-center grid-auto-cols   Grid-W-250 '}>
+       return (<div  className={'grid gap-20 h-fit justify-center grid-auto-cols   Grid-W-250 '}>
            {this.state.Cards}
            
        </div>)
    }
    PartTitle()
    {
-       return <p className='w-fit mb-12 mt-52 sm:text-white mx-auto text-3xl'> {this.state.PartTitle}</p>
+       return <p className='w-fit  mb-12 mt-52 sm:text-white mx-auto text-3xl'> {this.state.PartTitle}</p>
    }
    render()
    {

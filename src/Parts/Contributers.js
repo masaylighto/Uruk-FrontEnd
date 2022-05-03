@@ -51,7 +51,7 @@ class CContributers extends React.Component{
                {Contributer.contributions}
                </div>
            </div>
-           <div className='w-full rounded-b-2xl flex justify-center items-center text-center text-lg h-12 Bg-Gradiant-Blue text-white' onClick={(Event)=>CopyToClipboard(Contributer.email,Event.target)}>{this.state.Copy}</div>
+           <div className='w-full rounded-b-2xl flex justify-center items-center text-center text-base h-12 Bg-Gradiant-Blue text-white' onClick={(Event)=>CopyToClipboard(Contributer.email,Event.target)}>{this.state.Copy}</div>
        </div>
        )
    }
