@@ -43,11 +43,11 @@ class CMembers extends React.Component{
       
     
        return (<div key={Index} className={'rounded-2xl bg-white flex justify-between  h-60 shadow flex-col relative '}>
-           <div   className=' text-black mt-3 font-bold text-center h-6 mb-3 w-full flex justify-center items-center'>
+           <div   className=' text-black mt-3 text-base text-center h-6 mb-3 w-full flex justify-center items-center'>
            {Members[0]}
            </div>
            <div  className='h-50 bg-white   w-full flex overflow-scroll scrollbar-none'>
-               <div  className='h-fit bg-white rounded p-4 text-black w-full flex justify-center items-center'>
+               <div  className='h-fit bg-white text-sm rounded p-4 text-black w-full flex justify-center items-center'>
                {Members[1]}
                </div>
            </div>
@@ -83,7 +83,7 @@ class CMembers extends React.Component{
    render()
    {
        return (<div id='members' className='w-full relative Bg-Gradiant-Blue h-fit pb-10  flex  flex-col'>
-       <Tringle className={"absolute flipInverse  top-0 -mt-11  left-0 right-0"}/>
+   
        {this.PartTitle()}
        {this.ContributersGrid()}
        
