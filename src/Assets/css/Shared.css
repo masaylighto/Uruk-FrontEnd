@@ -39,10 +39,10 @@
     height: 50vmin;
 }
 .Bg-Gradiant-Blue{
-    background: linear-gradient(90deg,#50c7f1,#038ed5);
+    background: linear-gradient(90deg,#6ed3f6,#2dabeb);
 }
 .Text-Gradiant-Blue{
-    background: linear-gradient(90deg,#50c7f1,#038ed5);
+    background: linear-gradient(90deg,#6ed3f6,#2dabeb);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
