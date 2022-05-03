@@ -95,8 +95,8 @@ background-color: rgba(0, 0, 0, 0.100);
  
     .bg-gradiant-blue-Cliped-down{
        
-        background: linear-gradient(194deg,#50c7f1,#038ed5 65%, white 63%)
+        background: linear-gradient(194deg,#6ed3f6,#2dabeb 65%, white 63%)
     }
 .bg-gradiant-blue-Cliped-up{
-      background: linear-gradient(5deg,#50c7f1,#038ed5 78% ,white 0%);
+      background: linear-gradient(5deg,#6ed3f6,#2dabeb 78% ,white 0%);
     }
