@@ -82,7 +82,7 @@ class CMembers extends React.Component{
    }
    render()
    {
-       return (<div id='members' className='w-full relative Bg-Gradiant-Blue h-fit pb-10  flex  flex-col'>
+       return (<div id='members' className='w-full bg-gradiant-blue-Cliped-up relative  h-fit pb-10  flex  flex-col'>
    
        {this.PartTitle()}
        {this.ContributersGrid()}
