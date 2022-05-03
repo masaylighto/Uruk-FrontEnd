@@ -43,11 +43,11 @@ class CContributers extends React.Component{
       
     
        return (<div key={Index} className={'rounded-2xl flex justify-between  h-60 shadow flex-col relative '}>
-           <div   className=' text-black text-lg font-normal text-center h-6 mb-3 w-full flex justify-center items-center'>
+           <div   className=' text-black text-base	 text-lg font-normal text-center h-6 mb-3 w-full flex justify-center items-center'>
            {Contributer.name}
            </div>
            <div  className='h-50 bg-white   w-full flex overflow-scroll scrollbar-none'>
-               <div  className='h-fit bg-white rounded p-4 text-black w-full flex justify-center items-center'>
+               <div  className='h-fit bg-white text-sm	 rounded p-4 text-black w-full flex justify-center items-center'>
                {Contributer.contributions}
                </div>
            </div>
@@ -71,7 +71,7 @@ class CContributers extends React.Component{
    }
    
    ContributersGrid(){
-       return (<div  className={'grid gap-4 h-fit justify-center grid-auto-cols   Grid-W-250 '}>
+       return (<div  className={'grid gap-20 h-fit justify-center grid-auto-cols   Grid-W-250 '}>
            {this.state.Cards}
            
        </div>)
