@@ -47,7 +47,7 @@ class CHome extends React.Component{
     }
     Logo()
     {
-        return <Logo className='bg-cover bg-no-repeat   h-96 '></Logo>
+        return <Logo className='bg-cover bg-no-repeat     h-80' style={{width:340}}></Logo>
     }
     CenteredDiv()
     {
