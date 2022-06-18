@@ -2,9 +2,11 @@ import React from 'react';
 import '../Assets/css/tailwind.css'
 import '../Assets/css/Home.css'
 import '../Assets/css/Shared.css'
+import { ReactComponent as Logo } from '../Assets/Icons/logo.svg'
 import {FormatLink,Translation} from '../Helpers/ApiEndPoints'
 import {QuitIfInVaild, QuitReact} from '../Helpers/HelperFunctions'
 const uruk_voice = require("./../Assets/Audio/uruk-sound.ogg");
+
 class CHome extends React.Component{
     componentDidMount(){
         this.GetTranslation()
@@ -45,7 +47,7 @@ class CHome extends React.Component{
     }
     Logo()
     {
-        return <div className='Logo bg-cover bg-no-repeat  w-96 h-56 '></div>
+        return <Logo className='bg-cover bg-no-repeat   h-96 '></Logo>
     }
     CenteredDiv()
     {
