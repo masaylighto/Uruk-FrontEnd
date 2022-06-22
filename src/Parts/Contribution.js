@@ -31,7 +31,7 @@ class CContribution extends React.Component{
     {
         
         return (
-             <div className='md:w-4/6 w-full z-20 p-5 shadow flex   flex-col    md:rounded-2xl bg-white'>
+             <div style={{background:"#f7fcff"}} className='md:w-4/6 w-full z-20 p-5 shadow flex   flex-col    md:rounded-2xl '>
              {this.state.Title}
              <div className='my-6 mx-5'>
              {this.state.GuideLines}

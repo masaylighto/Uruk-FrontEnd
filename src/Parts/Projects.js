@@ -20,27 +20,21 @@ class CProjects extends React.Component{
         }
         return ColorIndex
     }
-    MoveUpEffect(Element){  
-     return
-        Element.animate(
-			[
-				{ height:  Element.clientHeight+"px", opacity:1},
-				{ height: "0px",  opacity:0},
-			],
-			{ duration: 200, iterations: 1, direction: "normal", fill: "forwards" })
-    }
+
     componentDidMount(){
         this.GetTranslation()
         this.GetProject()
         
     }
     GetProject(){
-
-        fetch(FormatLink(Projects.GetProjects,this.props.Language))
+        //Take =9
+        //Skip 0
+        //Pagination Parameters       
+        fetch(FormatLink(Projects.GetProjects,this.props.Language,9,this.LastCardIndex))
         .then(result=>result.json())
         .then(result=>QuitIfInVaild(result))
         .then(result =>this.CreateProjectsCards(result))
-        .catch(()=>QuitReact("Failed to retrieve Data from the server"))
+        .catch(()=>QuitReact("Failed to retrieve Projects from the server "))
 	 } 
      GetTranslation()
      {
@@ -49,7 +43,7 @@ class CProjects extends React.Component{
          .then(result=>result.json())
          .then(result=>QuitIfInVaild(result))
          .then(result =>this.SetTranslation(result))
-         .catch(()=>QuitReact("Failed to retrieve Data from the server"))
+         .catch(()=>QuitReact("Failed to retrieve Projects Translations from the server"))
      }
      SetTranslation(Response){
     
@@ -58,22 +52,14 @@ class CProjects extends React.Component{
 		this.setState(this.state)
    
      }
-    MoveDownEffect(Element){ 
-        return
-        Element.animate(
-			[
-				{ height:  Element.clientHeight+"px", opacity:0},
-				{ height: "100%",  opacity:1},
-			],
-			{ duration: 200, iterations: 1, direction: "normal", fill: "forwards" })
-    }
+
     ProjectsCard(project,Index){
         let color=Colors[this.KeepIndexInRange(Index)]
      
         return (<div key={Index} style={{boxShadow:"0px 0px 13px -3px "+color+"54",color:color}} className={'rounded-lg flex justify-between px-4  h-80 shadow flex-col relative '}>
              <p className='pt-4'>{project.name}</p>
             
-               <div onMouseLeave={(Event)=>this.MoveDownEffect(Event.target.parentElement.parentElement.children[0])} className='  rounded  overflow-scroll scrollbar-none   text-sm text-black w-full flex justify-center items-center'>
+               <div className='  rounded  overflow-scroll scrollbar-none   text-sm text-black w-full flex justify-center items-center'>
                 <p className='h-fit'>
                 {project.description}
                 </p>
@@ -88,16 +74,30 @@ class CProjects extends React.Component{
         PartTitle:"Our Projects",
         Visit:"Visit"
     }
+    
+    LastCardIndex=0
 
-    CreateProjectsCards(projects){
-        
-        this.state.Cards=  projects.map((project,index)=>{
-           
-            return this.ProjectsCard(project,index)
-        })  
+    CreateProjectsCards(projects)
+    {   
+        console.log(projects)
+        if(projects==""){
+            return
+        }
+        this.state.Cards=  projects.map((project,index)=>{        
+         return   this.ProjectsCard(project,index)
+        })
+        this.LastCardIndex+=9
         this.setState(this.state)
     }
-    
+    NextProjects()
+    {
+        this.GetProject()
+    }
+    PreviousProjects()
+    {
+        this.LastCardIndex=0 
+        this.GetProject()
+    }
     ProjectsGrid(){
         return (<div  className={'grid gap-24 md:w-5/6 md:mx-auto h-fit justify-center grid-auto-cols   Grid-W-300 '}>
             {this.state.Cards}
@@ -112,8 +112,11 @@ class CProjects extends React.Component{
     {
         return (<div id='Projects' className='w-full h-fit pb-10 gap-28 flex  flex-col'>
         {this.PartTitle()}
-        {this.ProjectsGrid()}
-        
+        <div className='flex flex-row '>
+         <button onClick={()=>this.PreviousProjects()} className='w-10  my-auto ml-10 text-gray-300 h-10 text-3xl bg-transparent'>ᐸ</button>
+         {this.ProjectsGrid()}
+         <button  onClick={()=>this.NextProjects()}   className='w-10 my-auto mr-10 h-10 text-gray-300 text-3xl bg-transparent'>ᐳ </button>
+        </div>
          </div>)
     }
 

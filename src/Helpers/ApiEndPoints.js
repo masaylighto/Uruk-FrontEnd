@@ -19,7 +19,7 @@ const WebsiteLink={
     GetLinks:"website_link/GetLinks?language={0}"
 }
 const Projects={
-    GetProjects:"projects/GetProjects?language={0}"
+    GetProjects:"projects/GetProjects?language={0}&Take={1}&Skip={2}"
 }
 const ProjectsMember={
     GetMember:"project_members/GetMembers?language={0}"

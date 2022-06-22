@@ -3,7 +3,6 @@ import '../Assets/css/tailwind.css'
 import '../Assets/css/Shared.css'
 import {FormatLink,Translation,ContactOptions} from '../Helpers/ApiEndPoints'
 import {QuitIfInVaild, QuitReact} from '../Helpers/HelperFunctions'
-let Colors=["#038ed56e","#0071b69e","#0056979e","#003d7a9e","#00255d9e"]
 class CContacts extends React.Component{
     componentDidMount(){
         this.GetTranslation()
@@ -50,20 +49,11 @@ class CContacts extends React.Component{
       
         this.setState(this.state)
     }
-    KeepIndexInRange(Index){
-        //this to keep the index that used to determine the color in the Color Array Range 
-        //through subtracting the lenghth from the index continuously if the index was larger than the range
-       let ColorIndex=Index
-       while(ColorIndex>Colors.length-1){
-           
-           ColorIndex-=Colors.length-1;
-       }
-       return ColorIndex
-   }
+ 
     OptionNode(Option,Index){
         
         return          <li key={Index}  className='text-blue-300 text-xl   rounded-2xl hover-Darken   w-fit p-3 '>
-            <span className='text-black  text-xl'>
+            <span className='text-black  text-lg'>
               {Option}
             </span>
          </li>
@@ -74,7 +64,7 @@ class CContacts extends React.Component{
     }
     render()
     {
-        return <div  id='Contacts' className='w-full  py-10 justify-evenly bg-white flex  flex-col '>
+        return <div style={{background:"#f7fcff"}}   id='Contacts' className='w-full  py-10 justify-evenly  flex  flex-col '>
         {this.PartTitle()}   
         <div className='flex flex-col gap-1 mx-5'>
          {this.state.ContactsOption}

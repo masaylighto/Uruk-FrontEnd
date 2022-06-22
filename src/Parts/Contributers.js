@@ -5,9 +5,18 @@ import '../Assets/css/Shared.css'
 import {FormatLink,Translation,Contributors} from '../Helpers/ApiEndPoints'
 import {QuitIfInVaild, QuitReact,CopyToClipboard} from '../Helpers/HelperFunctions'
 import { Tringle } from '../Components/Varity';
-
+let Colors=["#038ED5","#00ADDF","#00C9CF","#14DFAD","#9CF087"]
 class CContributers extends React.Component{
-    
+    KeepIndexInRange(Index){
+        //this to keep the index that used to determine the color in the Color Array Range 
+        //through subtracting the lenghth from the index continuously if the index was larger than the range
+       let ColorIndex=Index
+       while(ColorIndex>Colors.length-1){
+           
+           ColorIndex-=Colors.length-1;
+       }
+       return ColorIndex
+   }
 
    componentDidMount(){
        this.GetTranslation()
@@ -40,20 +49,13 @@ class CContributers extends React.Component{
     }
 
    Card(Contributer,Index){
+    let color=Colors[this.KeepIndexInRange(Index)]
+    return (<div  key={Index} style={{boxShadow:"0px 0px  10px 0px"+color+"54"}} className={"shadow rounded flex h-40 justify-around p-4 flex-col"}  >
+        <p className='w-fit' style={{color:color}}>{Contributer.name}</p>
+        <p style={{fontSize:"0.800rem"}} className='mt-3'>{Contributer.contributions} </p>
+        <p className='text-xs ml-auto mt-auto'   onClick={(Event)=>CopyToClipboard(Contributer.email,Event.target)}>🔗</p>
+        </div>)
       
-    
-       return (<div key={Index} className={'rounded-2xl flex justify-between  h-60 shadow flex-col relative '}>
-           <div   className=' text-black text-base font-normal text-center h-6 mb-3 w-full flex justify-center items-center'>
-           {Contributer.name}
-           </div>
-           <div  className='h-50   w-full flex overflow-scroll scrollbar-none'>
-               <div  className='h-fit  text-sm	 rounded p-4 text-black w-full flex justify-center items-center'>
-               {Contributer.contributions}
-               </div>
-           </div>
-           <div className='w-full rounded-b-2xl flex justify-center items-center text-center text-base h-12 Bg-Gradiant-Blue text-white' onClick={(Event)=>CopyToClipboard(Contributer.email,Event.target)}>{this.state.Copy}</div>
-       </div>
-       )
    }
    state={
        Cards:"Loading",

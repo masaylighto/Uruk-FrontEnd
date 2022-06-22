@@ -57,7 +57,7 @@ class CMembers extends React.Component{
    }
    state={
        Cards:"Loading",
-       PartTitle:"Contributers",
+       PartTitle:"Members",
        Copy:"Copy"
    }
 

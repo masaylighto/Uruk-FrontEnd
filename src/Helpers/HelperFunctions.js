@@ -28,4 +28,5 @@ const CopyToClipboard=(Text,Element)=>{
     Element.innerText="✓"
     setTimeout(()=>{Element.innerText=OldText},500)
   }
+  
 export {QuitIfInVaild,QuitReact,CopyToClipboard}
