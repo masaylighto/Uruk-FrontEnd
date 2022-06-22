@@ -37,8 +37,8 @@ class CNavbar extends React.Component{
     render()
     {
        return (<div className='w-full Bg-Gradiant-Blue flex md:justify-start justify-center'>
-       <div className="w-3/6 flex md:flex-row flex-col   gap-3 px-4">
-       <div className='Logo w-8  h-8 bg-no-repeat bg-contain my-auto'></div>
+       <div className="w-3/6 flex md:flex-row flex-col items-center   gap-3 px-4">
+       <div className='Logo w-8 h-8 bg-no-repeat bg-contain my-auto'></div>
         {
            this.state.Buttons
         }

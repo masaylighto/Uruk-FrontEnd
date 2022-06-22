@@ -79,7 +79,6 @@ class CProjects extends React.Component{
 
     CreateProjectsCards(projects)
     {   
-        console.log(projects)
         if(projects==""){
             return
         }
@@ -112,10 +111,10 @@ class CProjects extends React.Component{
     {
         return (<div id='Projects' className='w-full h-fit pb-10 gap-28 flex  flex-col'>
         {this.PartTitle()}
-        <div className='flex flex-row '>
-         <button onClick={()=>this.PreviousProjects()} className='w-10  my-auto ml-10 text-gray-300 h-10 text-3xl bg-transparent'>ᐸ</button>
+        <div className='flex flex-row justify-evenly'>
+         <button onClick={()=>this.PreviousProjects()} className='w-10  my-auto  text-gray-300 h-10 text-3xl bg-transparent'>ᐸ</button>
          {this.ProjectsGrid()}
-         <button  onClick={()=>this.NextProjects()}   className='w-10 my-auto mr-10 h-10 text-gray-300 text-3xl bg-transparent'>ᐳ </button>
+         <button  onClick={()=>this.NextProjects()}   className='w-10 my-auto  h-10 text-gray-300 text-3xl bg-transparent'>ᐳ </button>
         </div>
          </div>)
     }

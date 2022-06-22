@@ -13,7 +13,7 @@ const ContributionGuideLines = {
     Get:"ContributionGuideLine/Get?language={0}"
 }
 const Contributors = {
-    GetContributors:"contributors/GetContributors?language={0}"
+    GetContributors:"contributors/GetContributors?language={0}&Take={1}&Skip={2}"
 }
 const WebsiteLink={
     GetLinks:"website_link/GetLinks?language={0}"
