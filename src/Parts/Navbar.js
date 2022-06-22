@@ -32,14 +32,17 @@ class CNavbar extends React.Component{
     }
     CreateButton(Text,Link,Index)
     {
-        return <CTransparentButton key={Index} onClick={(()=>this.JumpToPage(Link)).bind()} Text={Text}/>
+        return    <CTransparentButton className="text-gray-600" key={Index} onClick={(()=>this.JumpToPage(Link)).bind()} Text={Text}/>
     }
     render()
     {
-       return (<div className='w-full Bg-Gradiant-Blue flex justify-center'>
-       <div className="w-5/6  Bg-White-Trans-30 flex md:flex-row flex-col bg-white  rounded-2xl mt-4 mx-auto justify-between px-4">{
+       return (<div className='w-full Bg-Gradiant-Blue flex md:justify-start justify-center'>
+       <div className="w-3/6 flex md:flex-row flex-col   gap-3 px-4">
+       <div className='Logo w-8  h-8 bg-no-repeat bg-contain my-auto'></div>
+        {
            this.state.Buttons
-       }</div>
+        }
+       </div>
        </div>
        )
     }
