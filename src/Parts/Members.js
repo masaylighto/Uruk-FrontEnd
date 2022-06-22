@@ -42,12 +42,12 @@ class CMembers extends React.Component{
    Card(Members,Index){
       
     
-       return (<div key={Index} className={'rounded-2xl bg-white flex justify-between  h-60 shadow flex-col relative '}>
+       return (<div key={Index} style={{background:"#ffffffd1"}} className={'rounded-2xl  flex justify-between  h-60 shadow flex-col relative '}>
            <div   className=' text-black mt-3 text-base text-center h-6 mb-3 w-full flex justify-center items-center'>
            {Members[0]}
            </div>
-           <div  className='h-50 bg-white   w-full flex overflow-scroll scrollbar-none'>
-               <div  className='h-fit bg-white text-sm rounded p-4 text-black w-full flex justify-center items-center'>
+           <div  className='h-50    w-full flex overflow-scroll scrollbar-none'>
+               <div  className='h-fit  text-sm rounded p-4 text-black w-full flex justify-center items-center'>
                {Members[1]}
                </div>
            </div>

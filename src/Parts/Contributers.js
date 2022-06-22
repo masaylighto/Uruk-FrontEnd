@@ -46,8 +46,8 @@ class CContributers extends React.Component{
            <div   className=' text-black text-base font-normal text-center h-6 mb-3 w-full flex justify-center items-center'>
            {Contributer.name}
            </div>
-           <div  className='h-50 bg-white   w-full flex overflow-scroll scrollbar-none'>
-               <div  className='h-fit bg-white text-sm	 rounded p-4 text-black w-full flex justify-center items-center'>
+           <div  className='h-50   w-full flex overflow-scroll scrollbar-none'>
+               <div  className='h-fit  text-sm	 rounded p-4 text-black w-full flex justify-center items-center'>
                {Contributer.contributions}
                </div>
            </div>

@@ -21,7 +21,7 @@ class CProjects extends React.Component{
         return ColorIndex
     }
     MoveUpEffect(Element){  
-     
+     return
         Element.animate(
 			[
 				{ height:  Element.clientHeight+"px", opacity:1},
@@ -59,7 +59,7 @@ class CProjects extends React.Component{
    
      }
     MoveDownEffect(Element){ 
-        
+        return
         Element.animate(
 			[
 				{ height:  Element.clientHeight+"px", opacity:0},
@@ -68,18 +68,18 @@ class CProjects extends React.Component{
 			{ duration: 200, iterations: 1, direction: "normal", fill: "forwards" })
     }
     ProjectsCard(project,Index){
+        let color=Colors[this.KeepIndexInRange(Index)]
      
-     
-        return (<div key={Index} style={{backgroundColor:Colors[this.KeepIndexInRange(Index)]}} className={'rounded-lg flex  h-60 shadow flex-col relative '}>
-            <div  onMouseEnter={(Event)=>this.MoveUpEffect(  Event.target)} style={{backgroundColor:Colors[this.KeepIndexInRange(Index)]}} className='h-60 rounded-lg   text-white text-2xl absolute left-0 right-0 bottom-0 top-0 w-full flex justify-center items-center'>
-            {project.name}
-            </div>
-            <div   style={{padding:1+"px"}} className='h-56 bg-white   w-full flex overflow-scroll scrollbar-none'>
-                <div onMouseLeave={(Event)=>this.MoveDownEffect(Event.target.parentElement.parentElement.children[0])} className='h-fit bg-white rounded p-4 text-black w-full flex justify-center items-center'>
+        return (<div key={Index} style={{boxShadow:"0px 0px 13px -3px "+color+"54",color:color}} className={'rounded-lg flex justify-between px-4  h-80 shadow flex-col relative '}>
+             <p className='pt-4'>{project.name}</p>
+            
+               <div onMouseLeave={(Event)=>this.MoveDownEffect(Event.target.parentElement.parentElement.children[0])} className='  rounded  overflow-scroll scrollbar-none   text-sm text-black w-full flex justify-center items-center'>
+                <p className='h-fit'>
                 {project.description}
+                </p>
                 </div>
-            </div>
-            <a href={project.link} className='h-12 hover-Darken active-Darken w-full text-white justify-center items-center flex text-center mx-auto'>{this.state.Visit}</a>
+           
+            <a href={project.link} style={{boxShadow:"0px 0px 13px -3px "+color,background:color}}  className='h-11 rounded hover-Darken active-Darken w-24 mb-3 text-white justify-center items-center flex text-center mr-3'>{this.state.Visit}</a>
         </div>
         )
     }
@@ -99,7 +99,7 @@ class CProjects extends React.Component{
     }
     
     ProjectsGrid(){
-        return (<div  className={'grid gap-24 h-fit justify-center grid-auto-cols   Grid-W-250 '}>
+        return (<div  className={'grid gap-24 md:w-5/6 md:mx-auto h-fit justify-center grid-auto-cols   Grid-W-300 '}>
             {this.state.Cards}
             
         </div>)
