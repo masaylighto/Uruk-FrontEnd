@@ -78,7 +78,7 @@ class CMembers extends React.Component{
    }
    PartTitle()
    {
-       return <p className='w-fit  mb-12 mt-52 sm:text-white mx-auto text-3xl'> {this.state.PartTitle}</p>
+       return <p className='w-fit  mb-12 md:mt-52 mt-10 text-white mx-auto text-3xl'> {this.state.PartTitle}</p>
    }
    render()
    {

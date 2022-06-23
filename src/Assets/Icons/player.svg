@@ -48,28 +48,7 @@
      inkscape:document-rotation="0" />
   <defs
      id="defs2">
-    <linearGradient
-       id="0">
-      <stop
-         style="stop-color:#3dc5e7;stop-opacity:1;"
-         offset="0"
-         id="stop896" />
-      <stop
-         style="stop-color:#37c87194;stop-opacity:01;"
-         offset="1"
-         id="stop898" />
-    </linearGradient>
-    <linearGradient
-       id="linearGradient865">
-      <stop
-         style="stop-color:#3dc5e7;stop-opacity:1;"
-         offset="0"
-         id="stop861" />
-      <stop
-         style="stop-color:#37c87194;stop-opacity:1;"
-         offset="1"
-         id="stop863" />
-    </linearGradient>
+
     <g
        id="layer1">
       <circle
@@ -81,16 +60,16 @@
       <g
          id="rect908"
          transform="matrix(0.72776721,0.68582424,-0.70376246,0.71043536,0.6478154,-0.23751494)"
-         style="opacity:1;fill:none;stroke:url(#0)">
+         style="opacity:1;fill:none;stroke:#87acf0">
         <path
-           style="opacity:1;fill:none;stroke:url(#0)"
+           style="opacity:1;fill:none;stroke:#87acf0"
            d="M 134.26904,65.682309 C 104.62153,35.531345 75.492389,4.8688705 45.711765,-25.151144 l 88.936285,0.372532 z"
            id="path1085" />
       </g>
     </g>
   </defs>
   <ellipse
-     style="fill:none;fill-rule:evenodd;stroke:#9cf087;stroke-width:2.64583331;fill-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     style="fill:none;fill-rule:evenodd;stroke:#87acf0;stroke-width:2.64583331;fill-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      id="path841"
      cx="75.621613"
      cy="75.020905"
@@ -98,7 +77,7 @@
      ry="58.311401" />
   <path
      id="rect843"
-     style="fill:#9cf087;fill-rule:evenodd;stroke:none;stroke-width:0.264583;fill-opacity:1"
+     style="fill:#87acf0;fill-rule:evenodd;stroke:none;stroke-width:0.264583;fill-opacity:1"
      d="M 59.270025,32.731773 102.05507,76.98845 59.209329,118.40946 c -0.527032,-28.561755 -0.24251,-57.116892 0.0607,-85.677687 z"
      sodipodi:nodetypes="cccc" />
 </svg>

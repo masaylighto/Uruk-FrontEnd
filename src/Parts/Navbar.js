@@ -5,11 +5,13 @@ import {CTransparentButton} from '../Components/Buttons'
 import {FormatLink,WebsiteLink} from '../Helpers/ApiEndPoints'
 import {QuitIfInVaild, QuitReact} from '../Helpers/HelperFunctions'
 class CNavbar extends React.Component{
+    
     JumpToPage(Link){
      window.location.href=Link
     }
     state={
-        Buttons:""
+        Buttons:"",
+        IsOpen:false
     }
     componentDidMount(){
         this.GetNavbarLinks()
@@ -27,21 +29,30 @@ class CNavbar extends React.Component{
     {
         let Buttons = Data.map((element,index)=>{
            return this.CreateButton(element[0],element[1],index)
-        })   
-       this.setState({Buttons}); 
+        })
+        this.state.Buttons=  Buttons
+       this.setState(this.state); 
     }
     CreateButton(Text,Link,Index)
     {
         return    <CTransparentButton className="text-gray-600" key={Index} onClick={(()=>this.JumpToPage(Link)).bind()} Text={Text}/>
     }
+    ToggleMenu(Event)
+    {
+        let Menu = Event.target.parentElement.children[1]
+        this.state.IsOpen=!this.state.IsOpen
+        this.setState(this.state)
+    }
     render()
     {
        return (<div className='w-full Bg-Gradiant-Blue flex md:justify-start justify-center'>
        <div className="w-3/6 flex md:flex-row flex-col items-center   gap-3 px-4">
-       <div className='Logo w-8 h-8 bg-no-repeat bg-contain my-auto'></div>
+       <div onClick={(Event)=>this.ToggleMenu(Event)} className='Logo w-8 h-8 bg-no-repeat bg-contain my-auto'></div>
+       <div className={'w-full overflow-hidden md:h-fit  flex md:flex-row flex-col items-center   gap-3 px-4 '+(this.state.IsOpen===true?'':'h-0')}>
         {
            this.state.Buttons
         }
+        </div>
        </div>
        </div>
        )

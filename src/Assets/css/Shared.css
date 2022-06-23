@@ -95,8 +95,17 @@ background-color: rgba(0, 0, 0, 0.100);
  
     .bg-gradiant-blue-Cliped-down{
        
-        background: linear-gradient(194deg,#91daff,#bae2fb 65%, #f7fcff 63%)
+        background: linear-gradient(190deg,#91daff,#bae2fb 65%, #f7fcff 63%)
     }
-.bg-gradiant-blue-Cliped-up{
-      background: linear-gradient(5deg,#91daff,#bae2fb 78% ,#f7fcff 0%);
+    .bg-gradiant-blue-Cliped-up{
+        background: linear-gradient(to right,#91daff,#bae2fb  )
+      }
+  
+    @media (min-width: 768px){
+
+        .bg-gradiant-blue-Cliped-up{
+            background: linear-gradient(10deg,#91daff,#bae2fb 67% ,#f7fcff 0%)
+          }
+      
     }
+  

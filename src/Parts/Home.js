@@ -18,7 +18,7 @@ class CHome extends React.Component {
     }
     UrukVoice() {
 
-        return <button className="player-icon bg-cover w-10 h-10 mx-auto" onClick={(e) => { e.target.children[0].play() }}>
+        return <button style={{filter:"drop-shadow(2px 4px 3px #00000033)"}} className="player-icon bg-cover w-10 h-10 mx-auto" onClick={(e) => { e.target.children[0].play() }}>
             <audio id="player" src={uruk_voice}>
                 If you are reading this, it is because your browser does not support the audio element.
             </audio>
@@ -43,7 +43,7 @@ class CHome extends React.Component {
         return <a></a>
     }
     Logo() {
-        return <Logo className='bg-cover bg-no-repeat     h-80' style={{ width: 340 }}></Logo>
+        return <Logo style={{filter:"drop-shadow(2px 4px 3px #00000033)", width: 340}} className='bg-cover bg-no-repeat     h-80' ></Logo>
     }
     CenteredDiv() {
 

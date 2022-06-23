@@ -2,21 +2,22 @@ import React, { useRef } from 'react';
 import '../Assets/css/tailwind.css'
 import '../Assets/css/Projects.css'
 import '../Assets/css/Shared.css'
-
+import {LeftArrow,RightArrow} from '../Components/Varity'
 import {FormatLink,Projects,Translation} from '../Helpers/ApiEndPoints'
 import {QuitIfInVaild, QuitReact} from '../Helpers/HelperFunctions'
 const uruk_voice = require("./../Assets/Audio/uruk-sound.ogg");
-let Colors=["#038ED5","#00ADDF","#00C9CF","#14DFAD","#9CF087"]
 
+let BrightColors=["#91DAFF","#69E8FC","#5CF4E6","#80FCC1","#B9FD95","#F9F871"]
+let DarkenColors=["#038ED5","#00ADDF","#00C9CF","#14DFAD","#9CF087"]
 class CProjects extends React.Component{
  
     KeepIndexInRange(Index){
          //this to keep the index that used to determine the color in the Color Array Range 
          //through subtracting the lenghth from the index continuously if the index was larger than the range
         let ColorIndex=Index
-        while(ColorIndex>Colors.length-1){
+        while(ColorIndex>BrightColors.length-1){
             
-            ColorIndex-=Colors.length-1;
+            ColorIndex-=BrightColors.length-1;
         }
         return ColorIndex
     }
@@ -54,10 +55,10 @@ class CProjects extends React.Component{
      }
 
     ProjectsCard(project,Index){
-        let color=Colors[this.KeepIndexInRange(Index)]
-     
-        return (<div key={Index} style={{boxShadow:"0px 0px 13px -3px "+color+"54",color:color}} className={'rounded-lg flex justify-between px-4  h-80 shadow flex-col relative '}>
-             <p className='pt-4'>{project.name}</p>
+        let color=BrightColors[this.KeepIndexInRange(Index)]
+        let Darkcolor=DarkenColors[this.KeepIndexInRange(Index)]
+        return (<div key={Index} style={{boxShadow:"0px 0px 13px -3px "+color+"a6",color:Darkcolor}} className={'rounded-lg flex justify-between px-4  h-80 shadow flex-col relative '}>
+             <p className='pt-4 '>{project.name}</p>
             
                <div className='  rounded  overflow-scroll scrollbar-none   text-sm text-black w-full flex justify-center items-center'>
                 <p className='h-fit'>
@@ -70,7 +71,7 @@ class CProjects extends React.Component{
         )
     }
     state={
-        Cards:"Loading",
+        Cards:"",
         PartTitle:"Our Projects",
         Visit:"Visit"
     }
@@ -109,12 +110,12 @@ class CProjects extends React.Component{
     }
     render()
     {
-        return (<div id='Projects' className='w-full h-fit pb-10 gap-28 flex  flex-col'>
+        return (<div id='Projects'  className='w-full h-fit pb-10 gap-28 flex  flex-col'>
         {this.PartTitle()}
-        <div className='flex flex-row justify-evenly'>
-         <button onClick={()=>this.PreviousProjects()} className='w-10  my-auto  text-gray-300 h-10 text-3xl bg-transparent'>ᐸ</button>
+        <div className='flex md:flex-row flex-col justify-evenly items-center'>
+         <button  onClick={()=>this.PreviousProjects()} className='w-10 md:rotate-0   rotate-90  md:my-auto mb-5  text-gray-300 h-10 text-3xl bg-transparent'>{this.props.Language==="العربية"?"ᐳ":"ᐸ"}</button>
          {this.ProjectsGrid()}
-         <button  onClick={()=>this.NextProjects()}   className='w-10 my-auto  h-10 text-gray-300 text-3xl bg-transparent'>ᐳ </button>
+         <button  onClick={()=>this.NextProjects()}   className='w-10 md:rotate-0  rotate-90 md:my-auto mt-5 h-10 text-gray-300 text-3xl bg-transparent'>{this.props.Language==="العربية"?"ᐸ":"ᐳ"} </button>
         </div>
          </div>)
     }
