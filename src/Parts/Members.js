@@ -42,7 +42,7 @@ class CMembers extends React.Component{
    Card(Members,Index){
       
     
-       return (<div key={Index} style={{background:"#ffffffd1"}} className={'rounded-2xl  flex justify-between  h-60 shadow flex-col relative '}>
+       return (<div key={Index} style={{background:"#ffffffd1"}} className={'rounded flex justify-between  h-60 shadow flex-col relative '}>
            <div   className=' text-black mt-3 text-base text-center h-6 mb-3 w-full flex justify-center items-center'>
            {Members[0]}
            </div>
@@ -51,7 +51,7 @@ class CMembers extends React.Component{
                {Members[1]}
                </div>
            </div>
-           <div className='w-full rounded-b-2xl flex justify-center items-center text-center text-base h-12 Bg-Gradiant-Blue text-white' onClick={(Event)=>CopyToClipboard(Members[2],Event.target)}>{this.state.Copy}</div>
+           <div className='w-full rounded-b flex justify-center items-center text-center text-base h-12 Bg-Gradiant-Blue text-white' onClick={(Event)=>CopyToClipboard(Members[2],Event.target)}>{this.state.Copy}</div>
        </div>
        )
    }
